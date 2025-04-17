@@ -49,7 +49,10 @@ jobs:
           export JEKYLL_ENV=production
           bundle exec jekyll build
           purgecss -c purgecss.config.js
-
+      - name: Fix Permission
+        run: |
+            chmod a+x bin/*
+            git commit -am "add execute permission to bin/deploy"
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
