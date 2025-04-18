@@ -3,7 +3,7 @@ import html2text
 import os
 from datetime import datetime
 
-RSS_FEED = "https://medium.com/feed/@al-folio"  # ✅ Update with your Medium username
+RSS_FEED = "https://medium.com/feed/@dazzled_mint_wildebeest_745"
 POSTS_DIR = "_posts"
 
 feed = feedparser.parse(RSS_FEED)
