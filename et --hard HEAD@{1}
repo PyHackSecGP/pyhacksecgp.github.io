@@ -1,0 +1,26 @@
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: checkout: moving from source to main
+[33m4e14801[m[33m ([m[1;31morigin/source[m[33m, [m[1;32msource[m[33m)[m HEAD@{1}: checkout: moving from main to source
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: checkout: moving from gh-pages to main
+[33m0a32e45[m[33m ([m[1;31morigin/gh-pages[m[33m, [m[1;32mgh-pages[m[33m)[m HEAD@{3}: checkout: moving from main to gh-pages
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{4}: checkout: moving from gh-pages to main
+[33m0a32e45[m[33m ([m[1;31morigin/gh-pages[m[33m, [m[1;32mgh-pages[m[33m)[m HEAD@{5}: commit: 🔥 Remove leftover config from external-posts plugin [ci skip]
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{6}: checkout: moving from main to gh-pages
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{7}: checkout: moving from gh-pages to main
+[33m25b56c1[m HEAD@{8}: commit: 🛠 Add Medium import script
+[33mc747b73[m HEAD@{9}: commit: 📝 Add Medium blog post
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{10}: checkout: moving from main to gh-pages
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{11}: checkout: moving from main to main
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{12}: checkout: moving from gh-pages to main
+[33mebcd3e1[m HEAD@{13}: commit: 🔥 Remove leftover config from external-posts plugin [ci skip]
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{14}: checkout: moving from main to gh-pages
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{15}: checkout: moving from main to main
+[33m1744097[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{16}: commit: 🔥 Remove leftover config from external-posts plugin
+[33m0347371[m HEAD@{17}: checkout: moving from gh-pages to main
+[33m0347371[m HEAD@{18}: checkout: moving from main to gh-pages
+[33m0347371[m HEAD@{19}: checkout: moving from gh-pages to main
+[33mde16266[m HEAD@{20}: commit: 🧼 Fully removed external-posts plugin and config
+[33m0347371[m HEAD@{21}: checkout: moving from main to gh-pages
+[33m0347371[m HEAD@{22}: checkout: moving from gh-pages to main
+[33meed1618[m HEAD@{23}: commit: 🔥 Remove external-posts plugin again
+[33m0347371[m HEAD@{24}: checkout: moving from main to gh-pages
+[33m0347371[m HEAD@{25}: checkout: moving from gh-pages to main
