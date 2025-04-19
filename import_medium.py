@@ -24,10 +24,11 @@ for entry in feed.entries:
     with open(filepath, "w") as f:
         f.write(f"---\n")
         f.write(f"title: \"{entry.title}\"\n")
-        f.write(f"date: {date.isoformat()}\n")
+        f.write(f"date: {date}\n")
         f.write(f"layout: post\n")
-        f.write(f"external_url: {entry.link}\n")
         f.write(f"---\n\n")
-        f.write(content)
+        f.write(f"[Read this post on Medium →]({entry.link})\n\n")
+        f.write(f"This post originally appeared on [Medium]({entry.link}).\n")
+
 
     print(f"✅ Created: {filename}")
