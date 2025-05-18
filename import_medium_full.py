@@ -1,38 +1,49 @@
 import feedparser
 from newspaper import Article
+from markdownify import markdownify as md
+from datetime import datetime
 import os
 import re
-from datetime import datetime
-from markdownify import markdownify as md
 
-RSS_URL = "https://medium.com/feed/@your_username"  # Replace this
-POSTS_DIR = "_posts"
+# ---- CONFIGURE THIS ----
+RSS_URL = 'https://medium.com/feed/@dazzled_mint_wildebeest_745'
+POSTS_DIR = '_posts'
+# ------------------------
 
 feed = feedparser.parse(RSS_URL)
 
+print(f"📰 Found {len(feed.entries)} Medium post(s)")
+
 for entry in feed.entries:
+    title = re.sub(r'[^\w\s-]', '', entry.title).strip().lower()
+    title = re.sub(r'[\s_-]+', '-', title)
     date = datetime(*entry.published_parsed[:3]).strftime('%Y-%m-%d')
-    title_slug = re.sub(r'[^\w\s-]', '', entry.title).strip().lower()
-    title_slug = re.sub(r'[\s_-]+', '-', title_slug)
-    filename = f"{POSTS_DIR}/{date}-{title_slug}.md"
+    filename = f"{POSTS_DIR}/{date}-{title}.md"
 
     if os.path.exists(filename):
-        print(f"⚠️ Skipping: {filename} (already exists)")
+        print(f"⚠️ Skipped: {filename} (already exists)")
         continue
 
-    # Scrape the article from Medium
-    article = Article(entry.link)
-    article.download()
-    article.parse()
+    print(f"\n⏳ Processing: {entry.link}")
 
-    content_md = md(article.text)
+    try:
+        article = Article(entry.link)
+        article.download()
+        article.parse()
+        print("✅ Downloaded and parsed")
 
-    with open(filename, 'w') as f:
-        f.write(f"---\n")
-        f.write(f"title: \"{entry.title}\"\n")
-        f.write(f"date: {date}\n")
-        f.write(f"layout: post\n")
-        f.write(f"---\n\n")
-        f.write(content_md)
+        markdown = md(article.text)
 
-    print(f"✅ Created: {filename}")
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(f"---\n")
+            f.write(f"title: \"{entry.title}\"\n")
+            f.write(f"date: {date}\n")
+            f.write(f"layout: post\n")
+            f.write(f"original_url: {entry.link}\n")
+            f.write(f"---\n\n")
+            f.write(f"*Originally published on [Medium]({entry.link}).*\n\n")
+            f.write(markdown.strip())
+
+        print(f"✅ Created: {filename}")
+    except Exception as e:
+        print(f"❌ Failed to process {entry.link}: {e}")
