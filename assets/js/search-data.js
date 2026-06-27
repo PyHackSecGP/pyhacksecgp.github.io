@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-building-a-sast-dast-triage-tool-with-ai-false-positive-filtering",
+        },{id: "post-ai-log-anomaly-detector-from-auth-log-to-mitre-att-amp-ck-in-30-seconds",
+        
+          title: "AI Log Anomaly Detector: From auth.log to MITRE ATT&amp;CK in 30 Seconds",
+        
+        description: "A Python tool that parses Linux auth logs and journalctl JSON, runs rule-based anomaly detection mapped to MITRE ATT&amp;CK, scores confidence, enriches IPs via AbuseIPDB, and sends the whole thing to a local LLM for threat assessment.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/p3-ai-log-anomaly-detector/";
+          
+        },
+      },{id: "post-building-a-sast-dast-triage-tool-with-ai-false-positive-filtering",
         
           title: "Building a SAST+DAST Triage Tool with AI False-Positive Filtering",
         
