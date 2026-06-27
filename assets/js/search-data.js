@@ -37,29 +37,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-what-i-m-learning-from-the-4-hour-workweek-and-why-it-s-blowing-my-mind",
-        
-          title: "What I’m Learning from The 4-Hour Workweek (And Why It’s Blowing My Mind)...",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/what-im-learning-from-the-4-hour-workweek-and-why-its-blowing-my-mind/";
-          
-        },
-      },{id: "post-how-to-make-your-smartphone-disappear-a-deep-dive-into-mobile-privacy",
-        
-          title: "How to Make Your Smartphone Disappear: A Deep Dive into Mobile Privacy",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/how-to-make-your-smartphone-disappear-a-deep-dive-into-mobile-privacy/";
-          
-        },
-      },{id: "post-archetype-hackthebox-walkthrough",
+        },{id: "post-archetype-hackthebox-walkthrough",
         
           title: "Archetype — HackTheBox Walkthrough",
         
@@ -68,17 +46,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/archetype-hackthebox-walkthrough/";
-          
-        },
-      },{id: "post-the-art-of-doing-nothing-why-we-need-to-embrace-stillness-in-a-busy-world",
-        
-          title: "The Art of Doing Nothing: Why We Need to Embrace Stillness in a...",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/the-art-of-doing-nothing-why-we-need-to-embrace-stillness-in-a-busy-world/";
           
         },
       },{id: "books-the-godfather",
