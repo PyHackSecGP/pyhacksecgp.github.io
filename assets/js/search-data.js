@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "Cybersecurity Analyst I based in Vancouver, BC. Building security tooling with Python and AI. Targeting Senior Security Engineer by 2029.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
