@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-archetype-hackthebox-walkthrough",
+        },{id: "post-what-i-m-learning-from-the-4-hour-workweek-and-why-it-s-blowing-my-mind",
+        
+          title: "What I’m Learning from The 4-Hour Workweek (And Why It’s Blowing My Mind)...",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/what-im-learning-from-the-4-hour-workweek-and-why-its-blowing-my-mind/";
+          
+        },
+      },{id: "post-archetype-hackthebox-walkthrough",
         
           title: "Archetype — HackTheBox Walkthrough",
         
