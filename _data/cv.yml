@@ -2,96 +2,85 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: GP Singh (Gurpreet Singh)
+    - name: Location
+      value: Vancouver, BC, Canada
+    - name: Role
+      value: Cybersecurity Analyst I
+    - name: Email
+      value: github.com/PyHackSecGP
     - name: Languages
-      value: English, German
-
-- title: Education
-  type: time_table
-  contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+      value: English, Punjabi
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Cybersecurity Analyst I
+      institution: Vancouver, BC
+      year: 2024 - Now
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
+        - SAST/DAST vulnerability triage and remediation guidance
+        - Security tooling development in Python
+        - Log analysis and anomaly detection
+        - Threat modelling and security review participation
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: <a href="https://github.com/PyHackSecGP/p1-sast-dast-triage">P1 — SAST+DAST Triage Tool</a>
+      year: 2026
+      description:
+        - Normalizes findings from Semgrep, Bandit, and OWASP ZAP into a unified schema
+        - CWE-based cross-scanner deduplication — collapses duplicate findings by vulnerability class
+        - LLM false-positive filter via local Ollama (hermes3:70b) on homelab claw-core
+        - Exports SARIF 2.1.0 for GitHub Code Scanning integration
+        - Python 3.11+ · stdlib only · no pip dependencies
+    - title: <a href="https://github.com/PyHackSecGP/p3-log-anomaly-detector">P3 — AI Log Anomaly Detector</a>
+      year: 2026
+      description:
+        - Parses Linux auth logs and journalctl JSON output
+        - Rule-based detection — brute force (sliding window), privilege escalation, credential stuffing
+        - MITRE ATT&CK mapping on every finding (T1110, T1548, T1136, T1078)
+        - AbuseIPDB enrichment for IP reputation scoring
+        - Known-good allowlist to suppress trusted IPs and jumpboxes
+        - Email alerting via stdlib smtplib on CRITICAL/HIGH findings
+    - title: <a href="https://github.com/PyHackSecGP/memory-safety-lab">Memory Safety Lab</a>
+      year: 2026
+      description:
+        - Hands-on C exercises — stack buffer overflows, heap exploitation, use-after-free
+        - GDB + pwndbg for dynamic analysis
+        - Foundation for OSCP exploit development track
+    - title: <a href="https://github.com/PyHackSecGP/ctf-lab">CTF Lab</a>
+      year: 2025 - Now
+      description:
+        - HackTheBox and TryHackMe machine writeups
+        - Custom exploit scripts and automation tools
+        - Weekly practice with commit-on-root discipline
 
-- title: Honors and Awards
+- title: Education & Certifications
   type: time_table
   contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+    - title: CompTIA Security+
+      year: 2027 (target)
+    - title: CEH / eJPT
+      year: 2027 (target)
+    - title: OSCP
+      year: 2028 (target)
 
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+- title: Technical Skills
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - "<b>Languages:</b> Python 3.11+, Bash, C, SQL"
+    - "<b>Security Tools:</b> Burp Suite, OWASP ZAP, Nmap, Semgrep, Bandit, Metasploit, Wireshark, GDB/pwndbg"
+    - "<b>Platforms:</b> Kali Linux, Ubuntu, Proxmox, Tailscale"
+    - "<b>AI/ML:</b> Ollama (hermes3:70b, llama3.2:3b), Anthropic Claude API"
+    - "<b>DevOps:</b> Git, GitHub Actions, Docker, systemd"
+    - "<b>Standards:</b> MITRE ATT&CK, OWASP Top 10, SARIF 2.1.0, CWE"
+
+- title: Interests
+  type: list
+  contents:
+    - Offensive security and exploit development
+    - AI-assisted detection engineering
+    - Homelab infrastructure and automation
+    - Marathon running and endurance training
