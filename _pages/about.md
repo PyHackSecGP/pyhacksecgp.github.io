@@ -2,49 +2,54 @@
 layout: about
 title: about
 permalink: /
-subtitle: "Affiliations — Classified. Address — Planet Earth. Motto — I void warranties."
+subtitle: "Cybersecurity Analyst I &nbsp;·&nbsp; Vancouver, BC 🇨🇦 &nbsp;·&nbsp; Building security tools with AI"
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true
   more_info: >
-    <p>📍 Earth, Solar System</p>
-    <p>Third rock from the sun</p>
-    <p>Wi-Fi dependent, caffeine-powered</p>
+    <p>📍 Vancouver, BC, Canada</p>
+    <p>💼 Cybersecurity Analyst I</p>
+    <p>🎯 Targeting Senior SecEng by 2029</p>
+    <p>🔑 <a href="https://github.com/PyHackSecGP">github.com/PyHackSecGP</a></p>
 
-
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false
+social: true
 
 announcements:
-  enabled: false # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: true
+  scrollable: true
+  limit: 5
 
 latest_posts:
   enabled: false
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  scrollable: true
+  limit: 3
 ---
 
-Cybersecurity isn’t just my profession — it’s my passion and platform. I specialize in helping individuals and organizations build resilience against digital threats while empowering the next generation of cyber defenders.
+I'm a Cybersecurity Analyst based in Vancouver with 1.5 years of professional experience and a relentless drive to build tools, break things ethically, and level up every week.
 
-👉 **Projects & Tools**  
-Practical content including red team utilities, detection engineering, threat analysis, and OSINT toolkits.
+My focus is on the intersection of **security engineering** and **AI** — building automated triage pipelines, anomaly detectors, and detection tooling that actually ship and run in production.
 
-👉 **Learning Resources**  
-Curated paths through top certifications (OSCP, CRTP, eJPT), lab walkthroughs, and hands-on guides.
+---
 
-👉 **Thought Leadership**  
-Articles and content on cybersecurity career building, mindset development, and community growth.
+**What I'm building:**
+- 🔴 [**P1 — SAST+DAST Triage**](/projects/1_project/) — Deduplicates findings from Semgrep, Bandit, and OWASP ZAP using CWE-based cross-scanner matching. LLM-powered false-positive filter via local Ollama. Exports SARIF 2.1.0 for GitHub Code Scanning.
+- 🔵 [**P3 — AI Log Anomaly Detector**](/projects/2_project/) — Parses Linux auth logs and journalctl output, maps findings to MITRE ATT&CK, enriches IPs via AbuseIPDB, sends email alerts on critical findings.
 
-My mission is to demystify cybersecurity, inspire ethical hacking, and help others grow their impact in this dynamic field.
+**What I'm learning:**
+- HackTheBox / TryHackMe — weekly machines, writeup on every root
+- Offensive security fundamentals: exploitation, post-ex, lateral movement
+- Memory safety vulnerabilities: buffer overflows, heap exploitation (C/GDB)
 
-Link to one of my favorite ->  [subreddit](https://www.reddit.com/r/blueteamsec/)
+**Stack I live in:**
+`Python` · `Bash` · `Linux` · `Kali` · `Burp Suite` · `Nmap` · `Semgrep` · `Ollama` · `Proxmox` · `Tailscale`
 
-Put your address / P.O. box / other info right below your picture.
+---
 
-You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. 
+**Cert roadmap:** Security+ (Early 2027) → CEH/eJPT (Mid 2027) → OSCP (2028)
 
-Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+**Career goal:** Senior / Staff Security Engineer — $250k CAD — elite capability, not just a title.
+
+> *"Ship something every day. Consistency beats perfection."*
