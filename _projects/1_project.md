@@ -1,81 +1,55 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: "P1 — SAST+DAST Triage Tool"
+description: "Deduplicates Semgrep/Bandit/ZAP findings, CWE-based risk scoring, LLM false-positive filter, SARIF 2.1.0 export"
+img: assets/img/proj_sast.jpg
 importance: 1
-category: work
-related_publications: true
+category: security tools
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
-
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm-12">
+    <a href="https://github.com/PyHackSecGP/p1-sast-dast-triage" class="btn btn-sm btn-outline-primary mb-3">
+      <i class="fab fa-github"></i> View on GitHub
+    </a>
   </div>
 </div>
+
+## Overview
+
+A production-grade triage pipeline for SAST and DAST scanner output. Built because raw scanner output is noisy — the same SQLi at `app.py:42` shows up in Semgrep *and* Bandit as two separate findings. This tool collapses them into one and scores it.
+
+## Problem It Solves
+
+Running multiple scanners (Semgrep, Bandit, OWASP ZAP) produces hundreds of overlapping findings. Manual triage at scale is impossible. This pipeline:
+
+1. **Deduplicates** — CWE + file + line as the dedup key; same vulnerability from two scanners = one finding
+2. **Scores** — CWE-based heuristic risk score (0–10), not fake CVSS
+3. **Filters** — Local LLM (hermes3:70b via Ollama) classifies each finding as `confirmed`, `needs_review`, or `likely_fp`
+4. **Exports** — SARIF 2.1.0 for GitHub Code Scanning, Markdown for reports, JSON for automation
+
+## Architecture
+
+```
+Scanner output (JSON/XML)
+        ↓
+   Parser layer          ← Semgrep | Bandit | ZAP parsers
+        ↓
+   Deduplication         ← CWE + file:line hash
+        ↓
+   Risk scoring          ← severity + CWE bump table
+        ↓
+   LLM filter (opt)      ← Ollama hermes3:70b via claw-core
+        ↓
+   Report output         ← SARIF | Markdown | JSON
 ```
 
-{% endraw %}
+## Key Technical Decisions
+
+- **CWE-based dedup** — rule IDs differ across scanners (`python.lang.security.audit.sqli` vs `B608`) but CWE-89 is universal
+- **Status field, not deletion** — findings tagged `likely_fp` are kept in the report with a suppression block in SARIF; never deleted
+- **stdlib only** — no pip dependencies; runs on any Python 3.11+ install
+
+## Stack
+
+`Python 3.11+` · `Ollama hermes3:70b` · `SARIF 2.1.0` · `Semgrep` · `Bandit` · `OWASP ZAP`
