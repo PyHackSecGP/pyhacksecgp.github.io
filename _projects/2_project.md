@@ -1,81 +1,63 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: "P3 — AI Log Anomaly Detector"
+description: "Auth log analysis with MITRE ATT&CK mapping, AbuseIPDB enrichment, confidence scores, email alerts"
+img: assets/img/proj_logs.jpg
 importance: 2
-category: work
-giscus_comments: true
+category: security tools
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
-
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm-12">
+    <a href="https://github.com/PyHackSecGP/p3-log-anomaly-detector" class="btn btn-sm btn-outline-primary mb-3">
+      <i class="fab fa-github"></i> View on GitHub
+    </a>
   </div>
 </div>
+
+## Overview
+
+An AI-powered Linux auth log analyzer that detects brute force attacks, privilege escalation, and credential stuffing — then maps each finding to MITRE ATT&CK, enriches IPs with AbuseIPDB reputation data, and fires email alerts.
+
+## Detection Rules
+
+| Rule | Method | MITRE |
+|---|---|---|
+| SSH Brute Force | Sliding window ≥5 failures/10min per IP | T1110 |
+| Distributed Brute Force | >10 IPs with combined failures | T1110 |
+| Credential Stuffing | Success after failures from same IP | T1110 |
+| Sudo Failures | Repeated PAM auth failures | T1548 |
+| su to root | Session opened as root via su | T1548 |
+| New Account Created | useradd in log | T1136 |
+| Direct Root Login | ROOT LOGIN event | T1078 |
+
+## Pipeline
+
+```
+/var/log/auth.log  OR  journalctl -o json
+         ↓
+    Parser (auth log or journalctl JSON)
+         ↓
+    Allowlist filter (skip trusted IPs/users)
+         ↓
+    Rule-based detection
+         ↓
+    MITRE ATT&CK mapping + Confidence score
+         ↓
+    AbuseIPDB IP enrichment (optional)
+         ↓
+    AI analysis via Ollama (optional)
+         ↓
+    Terminal report + JSON + Email alert
 ```
 
-{% endraw %}
+## Confidence Scoring
+
+Each anomaly gets a `0.0–1.0` confidence score based on evidence strength:
+- Brute force: `min(1.0, count / 50)` — scales with attempt volume
+- useradd / root login: `1.0` — deterministic, zero ambiguity
+- su to root: `0.85` — high confidence, minimal false positive rate
+
+## Stack
+
+`Python 3.11+` · `Ollama hermes3:70b` · `AbuseIPDB API` · `smtplib` · `MITRE ATT&CK`
