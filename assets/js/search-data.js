@@ -37,26 +37,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-what-i-m-learning-from-the-4-hour-workweek-and-why-it-s-blowing-my-mind",
+        },{id: "post-building-a-sast-dast-triage-tool-with-ai-false-positive-filtering",
         
-          title: "What I’m Learning from The 4-Hour Workweek (And Why It’s Blowing My Mind)...",
+          title: "Building a SAST+DAST Triage Tool with AI False-Positive Filtering",
         
-        description: "",
+        description: "How I built a Python tool that runs Semgrep and OWASP ZAP, deduplicates findings by CWE+location, scores risk, and uses a local LLM to filter false positives — with SARIF export for GitHub Code Scanning.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/what-im-learning-from-the-4-hour-workweek-and-why-its-blowing-my-mind/";
-          
-        },
-      },{id: "post-how-to-make-your-smartphone-disappear-a-deep-dive-into-mobile-privacy",
-        
-          title: "How to Make Your Smartphone Disappear: A Deep Dive into Mobile Privacy",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/how-to-make-your-smartphone-disappear-a-deep-dive-into-mobile-privacy/";
+            window.location.href = "/blog/2026/p1-sast-dast-triage-tool/";
           
         },
       },{id: "post-archetype-hackthebox-walkthrough",
