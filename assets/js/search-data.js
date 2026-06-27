@@ -72,7 +72,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-how-to-make-your-smartphone-disappear-a-deep-dive-into-mobile-privacy",
+            },{id: "post-what-i-m-learning-from-the-4-hour-workweek-and-why-it-s-blowing-my-mind",
+        
+          title: "What I’m Learning from The 4-Hour Workweek (And Why It’s Blowing My Mind)...",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/what-im-learning-from-the-4-hour-workweek-and-why-its-blowing-my-mind/";
+          
+        },
+      },{id: "post-how-to-make-your-smartphone-disappear-a-deep-dive-into-mobile-privacy",
         
           title: "How to Make Your Smartphone Disappear: A Deep Dive into Mobile Privacy",
         
@@ -110,60 +121,64 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+            },},{id: "news-portfolio-site-live-weekly-updates-from-here",
+          title: 'Portfolio site live — weekly updates from here',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_3/";
+            },},{id: "news-p1-sast-dast-triage-tool-shipped-and-pushed-to-github",
+          title: 'P1 SAST+DAST Triage Tool shipped and pushed to GitHub',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_1/";
+            },},{id: "news-p3-ai-log-anomaly-detector-mitre-att-amp-ck-mapping-abuseipdb-email-alerts",
+          title: 'P3 AI Log Anomaly Detector — MITRE ATT&amp;amp;CK mapping, AbuseIPDB, email alerts',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+            },},{id: "projects-p1-sast-dast-triage-tool",
+          title: 'P1 — SAST+DAST Triage Tool',
+          description: "Deduplicates Semgrep/Bandit/ZAP findings, CWE-based risk scoring, LLM false-positive filter, SARIF 2.1.0 export",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-p3-ai-log-anomaly-detector",
+          title: 'P3 — AI Log Anomaly Detector',
+          description: "Auth log analysis with MITRE ATT&amp;CK mapping, AbuseIPDB enrichment, confidence scores, email alerts",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-ctf-lab",
+          title: 'CTF Lab',
+          description: "HackTheBox &amp; TryHackMe writeups, custom exploit scripts, weekly practice",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+            },},{id: "projects-memory-safety-lab",
+          title: 'Memory Safety Lab',
+          description: "Hands-on C exploitation — buffer overflows, heap corruption, use-after-free",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+            },},{id: "projects-offsec-saturdays",
+          title: 'Offsec Saturdays',
+          description: "Weekly offensive security study notes — tools, techniques, labs, methodology",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
+            },},{id: "projects-75-hard-tracker",
+          title: '75 Hard Tracker',
+          description: "Flask web app for tracking 75 Hard challenge — daily check-ins, weight log, streak counter",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
+            },},{id: "projects-coming-soon",
+          title: 'Coming Soon',
+          description: "Project in development",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
+            },},{id: "projects-coming-soon",
+          title: 'Coming Soon',
+          description: "Project in development",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
+            },},{id: "projects-coming-soon",
+          title: 'Coming Soon',
+          description: "Project in development",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{
@@ -171,7 +186,7 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%66%61%6C%74%75_%65%78%74%72%61.%72%65%63%6F%70%79%37%30%34@%70%61%73%73%6D%61%69%6C.%6E%65%74", "_blank");
+          window.open("mailto:%63%6C%61%75%64%65.%61%69.%74%72%65%61%73%6F%6E%39%37%37@%70%61%73%73%6D%61%69%6C.%6E%65%74", "_blank");
         },
       },{
         id: 'social-github',
@@ -186,20 +201,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://www.linkedin.com/in/gurpreet-singh-cyber", "_blank");
-        },
-      },{
-        id: 'social-mastodon',
-        title: 'Mastodon',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://infosec.exchange/@Gurpreet_Singh", "_blank");
-        },
-      },{
-        id: 'social-medium',
-        title: 'Medium',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://medium.com/@dazzled_mint_wildebeest_745", "_blank");
         },
       },{
       id: 'light-theme',
