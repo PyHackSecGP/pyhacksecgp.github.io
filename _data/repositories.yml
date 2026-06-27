@@ -1,14 +1,12 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - PyHackSecGP
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - PyHackSecGP/p1-sast-dast-triage
+  - PyHackSecGP/p3-log-anomaly-detector
+  - PyHackSecGP/75hard-tracker
+  - PyHackSecGP/ctf-lab
+  - PyHackSecGP/memory-safety-lab
+  - PyHackSecGP/offsec-saturdays
