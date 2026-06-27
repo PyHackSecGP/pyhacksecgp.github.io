@@ -48,6 +48,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/what-im-learning-from-the-4-hour-workweek-and-why-its-blowing-my-mind/";
           
         },
+      },{id: "post-how-to-make-your-smartphone-disappear-a-deep-dive-into-mobile-privacy",
+        
+          title: "How to Make Your Smartphone Disappear: A Deep Dive into Mobile Privacy",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/how-to-make-your-smartphone-disappear-a-deep-dive-into-mobile-privacy/";
+          
+        },
       },{id: "post-archetype-hackthebox-walkthrough",
         
           title: "Archetype — HackTheBox Walkthrough",
