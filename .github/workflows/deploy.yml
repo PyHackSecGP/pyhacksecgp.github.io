@@ -51,8 +51,10 @@ jobs:
           purgecss -c purgecss.config.js
       - name: Fix Permission
         run: |
-            chmod a+x bin/*
-            git commit -am "add execute permission to bin/deploy"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          chmod a+x bin/*
+          git diff --quiet || git commit -am "add execute permission to bin/deploy"
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
