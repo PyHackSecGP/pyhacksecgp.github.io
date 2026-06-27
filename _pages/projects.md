@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Security tools, offensive security practice, and learning projects.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: ["security tools", "offensive security", "learning", "personal tools"]
 horizontal: false
 ---
 
