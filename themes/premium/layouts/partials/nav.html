@@ -8,6 +8,9 @@
       <li><a href="{{ .URL }}">{{ .Name }}</a></li>
       {{ end }}
     </ul>
-    <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" class="nav-cta">GitHub ↗</a>
+    <div class="nav-actions">
+      <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener" class="nav-cta-ghost">LinkedIn ↗</a>
+      <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" class="nav-cta">GitHub ↗</a>
+    </div>
   </div>
 </nav>
