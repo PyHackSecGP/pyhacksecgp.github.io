@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div style="padding-top:80px;">
+
+  <div class="post-hero container">
+    <div class="post-date">{{ .Date.Format "2006-01-02" }}
+      {{ range .Params.tags }}&nbsp;<span style="color:var(--accent);font-family:var(--mono);font-size:11px;">#{{ . }}</span>{{ end }}
+    </div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="post-desc">{{ . }}</p>{{ end }}
+  </div>
+
+  <hr class="divider" style="margin:0 2rem;">
+
+  <div class="container">
+    <article class="post-body">{{ .Content }}</article>
+    <div style="padding-bottom:3rem;">
+      <a href="{{ if eq .Section "blog" }}/blog/{{ else }}/projects/{{ end }}"
+         style="font-size:13px;color:var(--text3);">← back</a>
+    </div>
+  </div>
+
+</div>
+{{ end }}

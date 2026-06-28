@@ -1,0 +1,13 @@
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span>&lt;</span>{{ .Site.Params.author | replaceRE " " "" }}<span> /&gt;</span>
+    </a>
+    <ul class="nav-links">
+      {{ range .Site.Menus.premium }}
+      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+    <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" class="nav-cta">GitHub ↗</a>
+  </div>
+</nav>

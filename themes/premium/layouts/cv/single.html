@@ -1,0 +1,89 @@
+{{ define "main" }}
+<div style="padding-top:80px;">
+
+  <div class="cv-hero container">
+    <div class="section-label">// curriculum vitae</div>
+    <h1>GP Singh</h1>
+    <p style="color:var(--text2);font-size:16px;margin-bottom:1.5rem;">Cybersecurity Analyst I · Vancouver, BC, Canada</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="{{ .Site.Params.github }}" target="_blank" class="btn-primary">GitHub ↗</a>
+      <a href="{{ .Site.Params.linkedin }}" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+    </div>
+  </div>
+
+  <hr class="divider" style="margin:0 2rem;">
+
+  <div class="container cv-body">
+
+    <div class="cv-section">
+      <div class="cv-section-header">// experience</div>
+      <div class="cv-row">
+        <div class="cv-date-col">2024 – now</div>
+        <div>
+          <div class="cv-title">Cybersecurity Analyst I</div>
+          <div class="cv-org">Vancouver, BC</div>
+          <ul class="cv-bullets">
+            <li>SAST/DAST vulnerability triage and remediation guidance for development teams</li>
+            <li>Security tooling development in Python — automated scanners, parsers, report generators</li>
+            <li>Log analysis and anomaly detection using rule-based engines and local LLMs</li>
+            <li>Threat modelling and security review participation across product lifecycle</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-header">// projects</div>
+      <div class="cv-row">
+        <div class="cv-date-col">2026</div>
+        <div>
+          <div class="cv-title"><a href="https://github.com/PyHackSecGP/p1-sast-dast-triage">P1 — SAST+DAST Triage Tool</a></div>
+          <ul class="cv-bullets">
+            <li>CWE-based cross-scanner deduplication (Semgrep + Bandit + OWASP ZAP)</li>
+            <li>Risk scoring 0–10; LLM false-positive filter via on-prem Ollama hermes3:70b</li>
+            <li>SARIF 2.1.0 export with suppressions block for GitHub Code Scanning</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-row">
+        <div class="cv-date-col">2026</div>
+        <div>
+          <div class="cv-title"><a href="https://github.com/PyHackSecGP/p3-log-anomaly-detector">P3 — AI Log Anomaly Detector</a></div>
+          <ul class="cv-bullets">
+            <li>7 detection rules mapped to MITRE ATT&CK (T1110, T1548, T1136, T1078)</li>
+            <li>Confidence scoring, AbuseIPDB enrichment, email alerts, journalctl support</li>
+            <li>Local LLM threat narrative via Ollama — no data leaves the network</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-row">
+        <div class="cv-date-col">2025–now</div>
+        <div>
+          <div class="cv-title"><a href="https://github.com/PyHackSecGP/ctf-lab">CTF Lab</a></div>
+          <ul class="cv-bullets">
+            <li>HTB/THM machine writeups with custom exploit scripts; commit-on-root discipline</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-header">// skills</div>
+      <div class="skill-row"><span class="skill-row-label">languages</span><span class="skill-row-val">Python 3.11+, Bash, C, SQL</span></div>
+      <div class="skill-row"><span class="skill-row-label">security tools</span><span class="skill-row-val">Burp Suite, OWASP ZAP, Nmap, Semgrep, Bandit, Metasploit, Wireshark, GDB/pwndbg</span></div>
+      <div class="skill-row"><span class="skill-row-label">ai / detection</span><span class="skill-row-val">Ollama, MITRE ATT&CK, SARIF 2.1.0, CWE, OWASP Top 10</span></div>
+      <div class="skill-row"><span class="skill-row-label">infra</span><span class="skill-row-val">Kali Linux, Ubuntu, Proxmox, Tailscale, Git, GitHub Actions, Docker, systemd</span></div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-header">// certifications (roadmap)</div>
+      <ul class="cert-list">
+        <li class="cert-item"><div class="cert-icon">🎯</div><span class="cert-name">CompTIA Security+</span><span class="cert-date">2027</span></li>
+        <li class="cert-item"><div class="cert-icon">⚔️</div><span class="cert-name">CEH — Certified Ethical Hacker</span><span class="cert-date">2027</span></li>
+        <li class="cert-item"><div class="cert-icon">💀</div><span class="cert-name">OSCP — Offensive Security</span><span class="cert-date">2028</span></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+{{ end }}

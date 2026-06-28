@@ -4,6 +4,12 @@ title = "GP Singh"
 enableRobotsTXT = true
 enableEmoji = true
 
+# ── THEME SWITCH ─────────────────────────────────────────────
+# Change this one line to swap themes:
+#   theme = "terminal"   ← kali-style terminal hacker
+#   theme = "premium"    ← minimalist premium cyberpunk
+theme = "terminal"
+
 [params]
   author       = "GP Singh"
   handle       = "pyhacksecgp"
@@ -14,6 +20,7 @@ enableEmoji = true
   linkedin     = "https://linkedin.com/in/gurpreet-singh-cyber"
   email        = "github.com/PyHackSecGP"
 
+# terminal theme menu (kali-prompt style)
 [menu]
   [[menu.main]]
     name       = "~/whoami"
@@ -29,6 +36,24 @@ enableEmoji = true
     weight     = 3
   [[menu.main]]
     name       = "~/cv"
+    url        = "/cv/"
+    weight     = 4
+
+# premium theme menu (clean)
+  [[menu.premium]]
+    name       = "About"
+    url        = "/#about"
+    weight     = 1
+  [[menu.premium]]
+    name       = "Projects"
+    url        = "/projects/"
+    weight     = 2
+  [[menu.premium]]
+    name       = "Blog"
+    url        = "/blog/"
+    weight     = 3
+  [[menu.premium]]
+    name       = "CV"
     url        = "/cv/"
     weight     = 4
 

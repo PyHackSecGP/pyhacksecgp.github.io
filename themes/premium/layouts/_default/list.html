@@ -1,0 +1,64 @@
+{{ define "main" }}
+<div style="padding-top:80px;">
+
+  <section style="padding:4rem 0 2rem;">
+    <div class="container">
+      <div class="section-label">// {{ .Section | default "index" }}</div>
+      <h1 class="section-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="section-sub">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  <section style="padding:0 0 6rem;">
+    <div class="container">
+
+      {{ if eq .Section "blog" }}
+      <div class="blog-grid">
+        {{ range .Pages.ByDate.Reverse }}
+        <div class="glass-card reveal">
+          <div class="post-date">{{ .Date.Format "2006-01-02" }}</div>
+          <div class="post-tags">{{ range .Params.tags }}<span class="post-tag">#{{ . }}</span>{{ end }}</div>
+          <a href="{{ .RelPermalink }}" class="post-title-link">{{ .Title }}</a>
+          <p class="post-summary">{{ .Summary | truncate 160 }}</p>
+        </div>
+        {{ else }}
+        <div class="glass-card"><p style="color:var(--text3);">// no posts yet</p></div>
+        {{ end }}
+      </div>
+
+      {{ else if eq .Section "projects" }}
+      <div class="projects-grid">
+        {{ range .Pages.ByParam "weight" }}
+        <div class="glass-card reveal">
+          <div class="proj-header">
+            <div class="proj-name">{{ .Title }}</div>
+            {{ with .Params.status }}
+            <span class="proj-badge {{ . }}">{{ if eq . "shipped" }}■ Shipped{{ else if eq . "wip" }}○ WIP{{ else }}○ Planned{{ end }}</span>
+            {{ end }}
+          </div>
+          <p class="proj-desc">{{ .Params.summary | default (.Summary | truncate 150) }}</p>
+          {{ with .Params.tags }}
+          <div class="proj-tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>
+          {{ end }}
+          <div class="proj-links">
+            {{ with .Params.github }}<a href="{{ . }}" target="_blank">GitHub ↗</a>{{ end }}
+            <a href="{{ .RelPermalink }}">Details →</a>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      {{ else }}
+      <ul style="list-style:none;">
+        {{ range .Pages }}
+        <li style="padding:1rem 0;border-bottom:1px solid var(--border);">
+          <a href="{{ .RelPermalink }}" class="post-title-link">{{ .Title }}</a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+    </div>
+  </section>
+</div>
+{{ end }}
