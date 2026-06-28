@@ -1,0 +1,142 @@
+{{ define "main" }}
+
+<div style="margin:2rem 0 1.5rem;">
+  <div class="p-line">
+    <span class="p-bracket">┌─[</span><span class="p-user">pyhacksecgp</span><span class="p-bracket">@</span><span class="p-user">kali</span><span class="p-bracket">]─[</span><span class="p-path">~/cv</span><span class="p-bracket">]</span>
+  </div>
+  <div class="p-line">
+    <span class="p-bracket">└──╼ </span><span class="p-arrow">$</span>&nbsp;
+    <span class="p-cmd">cat</span>&nbsp;<span style="color:var(--blue);">resume.txt</span>
+  </div>
+</div>
+
+<div style="margin-bottom:2rem;">
+  <div style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:.25rem;">GP Singh</div>
+  <div style="font-size:13px;color:var(--muted);">Cybersecurity Analyst I &nbsp;·&nbsp; Vancouver, BC, Canada</div>
+  <div style="margin-top:.75rem;display:flex;gap:1rem;flex-wrap:wrap;font-size:12px;">
+    <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">github ↗</a>
+    <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">linkedin ↗</a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- Experience -->
+<div class="cv-section">
+  <div class="cv-section-title">// experience</div>
+  <div class="cv-entry">
+    <div class="cv-date">2024 – present</div>
+    <div class="cv-content">
+      <div class="cv-title">Cybersecurity Analyst I</div>
+      <div class="cv-org">Vancouver, BC, Canada</div>
+      <ul class="cv-bullets">
+        <li>SAST/DAST vulnerability triage and remediation guidance for development teams</li>
+        <li>Security tooling development in Python — automated scanners, parsers, report generators</li>
+        <li>Log analysis and anomaly detection using rule-based engines and local LLMs</li>
+        <li>Threat modelling and security review participation across product lifecycle</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Projects -->
+<div class="cv-section">
+  <div class="cv-section-title">// projects</div>
+  <div class="cv-entry">
+    <div class="cv-date">2026</div>
+    <div class="cv-content">
+      <div class="cv-title"><a href="https://github.com/PyHackSecGP/p1-sast-dast-triage">P1 — SAST+DAST Triage Tool</a></div>
+      <ul class="cv-bullets">
+        <li>CWE-based cross-scanner deduplication (Semgrep + Bandit + OWASP ZAP → single schema)</li>
+        <li>Risk scoring 0–10 weighted by severity, dynamic finding, and vulnerability class</li>
+        <li>LLM false-positive filter via local Ollama hermes3:70b — no data leaves the network</li>
+        <li>SARIF 2.1.0 export with suppressions block for GitHub Code Scanning integration</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-date">2026</div>
+    <div class="cv-content">
+      <div class="cv-title"><a href="https://github.com/PyHackSecGP/p3-log-anomaly-detector">P3 — AI Log Anomaly Detector</a></div>
+      <ul class="cv-bullets">
+        <li>Parses Linux auth logs and journalctl JSON with sliding-window detection engine</li>
+        <li>7 detection patterns mapped to MITRE ATT&CK (T1110, T1548, T1136, T1078)</li>
+        <li>Confidence scoring per anomaly (0.0–1.0) based on evidence strength</li>
+        <li>AbuseIPDB IP reputation enrichment, email alerts via stdlib smtplib</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-date">2025 – now</div>
+    <div class="cv-content">
+      <div class="cv-title"><a href="https://github.com/PyHackSecGP/ctf-lab">CTF Lab</a></div>
+      <ul class="cv-bullets">
+        <li>HackTheBox and TryHackMe machine writeups with custom exploit scripts</li>
+        <li>Commit-on-root discipline: every rooted machine → writeup → push</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-date">2026</div>
+    <div class="cv-content">
+      <div class="cv-title"><a href="https://github.com/PyHackSecGP/memory-safety-lab">Memory Safety Lab</a></div>
+      <ul class="cv-bullets">
+        <li>Hands-on C exploitation — stack overflows, heap, use-after-free, GDB/pwndbg</li>
+        <li>Foundation for OSCP exploit development track</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Skills -->
+<div class="cv-section">
+  <div class="cv-section-title">// skills</div>
+  <div style="font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;">
+    <div><span class="text-orange">languages</span> &nbsp;· Python 3.11+, Bash, C, SQL</div>
+    <div><span class="text-orange">security tools</span> &nbsp;· Burp Suite, OWASP ZAP, Nmap, Semgrep, Bandit, Metasploit, Wireshark, GDB/pwndbg</div>
+    <div><span class="text-orange">ai / detection</span> &nbsp;· Ollama, MITRE ATT&CK, SARIF 2.1.0, CWE, OWASP Top 10</div>
+    <div><span class="text-orange">infra</span> &nbsp;· Kali Linux, Ubuntu, Proxmox, Tailscale, Git, GitHub Actions, Docker, systemd</div>
+  </div>
+</div>
+
+<!-- Certifications -->
+<div class="cv-section">
+  <div class="cv-section-title">// certifications (roadmap)</div>
+  <div class="cert-grid">
+    <div class="cert-item">
+      <span class="cert-name">CompTIA Security+</span>
+      <span class="cert-issuer">CompTIA</span>
+      <span class="cert-date">target: 2027</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-name">CEH — Certified Ethical Hacker</span>
+      <span class="cert-issuer">EC-Council</span>
+      <span class="cert-date">target: 2027</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-name">OSCP — Offensive Security Certified Professional</span>
+      <span class="cert-issuer">Offensive Security</span>
+      <span class="cert-date">target: 2028</span>
+    </div>
+  </div>
+</div>
+
+<!-- Education -->
+<div class="cv-section">
+  <div class="cv-section-title">// learning</div>
+  <div class="cv-entry">
+    <div class="cv-date">2024 – now</div>
+    <div class="cv-content">
+      <div class="cv-title">Self-directed / Homelab</div>
+      <div class="cv-org">Offensive Security & Detection Engineering</div>
+      <ul class="cv-bullets">
+        <li>HackTheBox and TryHackMe active machines</li>
+        <li>Memory safety exploitation: buffer overflows, heap, UAF</li>
+        <li>Detection engineering and MITRE ATT&CK framework application</li>
+        <li>Running Proxmox homelab with Ollama hermes3:70b for local AI development</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{ end }}

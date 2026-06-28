@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+<div class="post-header">
+  <div class="text-muted" style="font-size:12px;margin-bottom:.75rem;">
+    {{ .Date.Format "2006-01-02" }}
+    {{ range .Params.tags }}&nbsp;<span style="color:var(--orange);">#{{ . }}</span>{{ end }}
+  </div>
+  <h1 style="color:var(--text);font-size:20px;line-height:1.35;margin-bottom:.5rem;">{{ .Title }}</h1>
+  {{ with .Params.description }}
+  <p style="color:var(--muted);font-size:13px;">{{ . }}</p>
+  {{ end }}
+  <hr class="divider" style="margin:1.25rem 0;">
+</div>
+
+<article class="post-body">
+  {{ .Content }}
+</article>
+
+<div style="margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+  <a href="{{ if eq .Section "blog" }}/blog/{{ else }}/projects/{{ end }}" style="font-size:12px;color:var(--muted);">← back</a>
+</div>
+
+{{ end }}

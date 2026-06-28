@@ -1,0 +1,18 @@
+<div class="proj-card">
+  <div class="proj-card-header">
+    <span class="proj-name">{{ .Title }}</span>
+    {{ with .Params.status }}
+    <span class="proj-badge {{ . }}">{{ if eq . "shipped" }}■ SHIPPED{{ else if eq . "wip" }}○ WIP{{ else }}○ PLANNED{{ end }}</span>
+    {{ end }}
+  </div>
+  <p class="proj-desc">{{ .Params.summary | default .Summary }}</p>
+  {{ with .Params.tags }}
+  <div class="proj-tags">
+    {{ range . }}<span class="proj-tag">{{ . }}</span>{{ end }}
+  </div>
+  {{ end }}
+  <div class="proj-links">
+    {{ with .Params.github }}<a href="{{ . }}" target="_blank" rel="noopener">github ↗</a>{{ end }}
+    {{ if ne .RelPermalink "" }}<a href="{{ .RelPermalink }}">read more →</a>{{ end }}
+  </div>
+</div>

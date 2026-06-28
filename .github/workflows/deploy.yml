@@ -1,61 +1,47 @@
-name: Deploy site
+name: Deploy Hugo Site
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Ruby 💎
-        uses: ruby/setup-ruby@v1
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
         with:
-          ruby-version: "3.2"
-          bundler-cache: true
+          hugo-version: 'latest'
+          extended: true
 
-      - name: Setup Python 🐍
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
-          cache: pip
+      - name: Build
+        run: hugo --minify --baseURL "https://pyhacksecgp.github.io/"
 
-      - name: Setup Node.js for PurgeCSS 🧩
-        uses: actions/setup-node@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          node-version: "18"
+          path: ./public
 
-      - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          commitChange: false
-          valueFile: "_config.yml"
-          propertyPath: "giscus.repo"
-          value: ${{ github.repository }}
-
-      - name: Install and Build 🔧
-        run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
-          npm install -g purgecss
-          export JEKYLL_ENV=production
-          bundle exec jekyll build
-          purgecss -c purgecss.config.js
-      - name: Fix Permission
-        run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          chmod a+x bin/*
-          git diff --quiet || git commit -am "add execute permission to bin/deploy"
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: _site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
