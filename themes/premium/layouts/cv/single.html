@@ -3,8 +3,9 @@
 
   <div class="cv-hero container">
     <div class="section-label">// curriculum vitae</div>
-    <h1>GP Singh</h1>
-    <p style="color:var(--text2);font-size:16px;margin-bottom:1.5rem;">Cybersecurity Analyst I · Vancouver, BC, Canada</p>
+    <h1>Gurpreet Singh Ahluwalia</h1>
+    <p style="color:var(--text2);font-size:16px;margin-bottom:.4rem;">Cyber Security Engineer · Vancouver, BC, Canada</p>
+    <p style="color:var(--text3);font-family:var(--mono);font-size:13px;margin-bottom:1.5rem;">lululemon · TryHackMe Top 1% · MS Information Security</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;">
       <a href="{{ .Site.Params.github }}" target="_blank" class="btn-primary">GitHub ↗</a>
       <a href="{{ .Site.Params.linkedin }}" target="_blank" class="btn-ghost">LinkedIn ↗</a>
@@ -18,16 +19,41 @@
     <div class="cv-section">
       <div class="cv-section-header">// experience</div>
       <div class="cv-row">
-        <div class="cv-date-col">2024 – now</div>
+        <div class="cv-date-col">Aug 2024 – now</div>
         <div>
-          <div class="cv-title">Cybersecurity Analyst I</div>
-          <div class="cv-org">Vancouver, BC</div>
+          <div class="cv-title">Cyber Security Analyst</div>
+          <div class="cv-org">lululemon · Vancouver, BC</div>
           <ul class="cv-bullets">
-            <li>SAST/DAST vulnerability triage and remediation guidance for development teams</li>
-            <li>Security tooling development in Python — automated scanners, parsers, report generators</li>
-            <li>Log analysis and anomaly detection using rule-based engines and local LLMs</li>
-            <li>Threat modelling and security review participation across product lifecycle</li>
+            <li>SIEM operations using Splunk, IBM QRadar, and Azure Sentinel — monitoring, alert triage, and incident response</li>
+            <li>Real-time threat detection with AWS GuardDuty and Microsoft Defender; cloud security posture management</li>
+            <li>SAST/DAST vulnerability triage and remediation guidance for development teams across product lifecycle</li>
+            <li>Security tooling development in Python — automated scanners, parsers, SARIF report generators, LLM FP filtering</li>
+            <li>Log analysis and anomaly detection using rule-based engines mapped to MITRE ATT&CK and local Ollama models</li>
+            <li>IAM/PAM administration — Okta, Active Directory, AWS IAM; privilege access reviews and entitlement management</li>
+            <li>Penetration testing of network infrastructure, web applications, and APIs using Nmap, Metasploit, Burp Suite, Wireshark</li>
+            <li>Threat modelling, OWASP Top 10 review, and data security governance (DLP, classification, Microsoft Purview)</li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-header">// education</div>
+      <div class="cv-row">
+        <div class="cv-date-col">2019 – 2020</div>
+        <div>
+          <div class="cv-title">Master of Science — Information Networking and Computer Security</div>
+          <div class="cv-org">New York Institute of Technology (NYIT)</div>
+          <ul class="cv-bullets">
+            <li>Cyber Threat Intelligence, network security architecture, applied cryptography</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-row">
+        <div class="cv-date-col">2014 – 2018</div>
+        <div>
+          <div class="cv-title">Bachelor of Technology — Computer Science</div>
+          <div class="cv-org">Chandigarh Engineering College, Landran</div>
         </div>
       </div>
     </div>
@@ -62,6 +88,7 @@
           <div class="cv-title"><a href="https://github.com/PyHackSecGP/ctf-lab">CTF Lab</a></div>
           <ul class="cv-bullets">
             <li>HTB/THM machine writeups with custom exploit scripts; commit-on-root discipline</li>
+            <li>TryHackMe top 1% global ranking</li>
           </ul>
         </div>
       </div>
@@ -69,14 +96,32 @@
 
     <div class="cv-section">
       <div class="cv-section-header">// skills</div>
+      <div class="skill-row"><span class="skill-row-label">siem / detection</span><span class="skill-row-val">Splunk, IBM QRadar, ELK Stack, Azure Sentinel, AWS GuardDuty, Fortisiem, ArcSight, MISP, STIX/TAXII</span></div>
+      <div class="skill-row"><span class="skill-row-label">offensive / appsec</span><span class="skill-row-val">Burp Suite, OWASP ZAP, Nmap, Metasploit, Wireshark, Shodan, Nessus, Hashcat, OpenSSL, GDB/pwndbg</span></div>
+      <div class="skill-row"><span class="skill-row-label">cloud / iam</span><span class="skill-row-val">Azure Defender, Azure WAF, Azure Security Center, AWS IAM, Microsoft Defender, Okta, Active Directory, SOAR, IDS/IPS, Cisco ASA</span></div>
       <div class="skill-row"><span class="skill-row-label">languages</span><span class="skill-row-val">Python 3.11+, Bash, C, SQL</span></div>
-      <div class="skill-row"><span class="skill-row-label">security tools</span><span class="skill-row-val">Burp Suite, OWASP ZAP, Nmap, Semgrep, Bandit, Metasploit, Wireshark, GDB/pwndbg</span></div>
-      <div class="skill-row"><span class="skill-row-label">ai / detection</span><span class="skill-row-val">Ollama, MITRE ATT&CK, SARIF 2.1.0, CWE, OWASP Top 10</span></div>
-      <div class="skill-row"><span class="skill-row-label">infra</span><span class="skill-row-val">Kali Linux, Ubuntu, Proxmox, Tailscale, Git, GitHub Actions, Docker, systemd</span></div>
+      <div class="skill-row"><span class="skill-row-label">frameworks</span><span class="skill-row-val">MITRE ATT&CK, NIST, OWASP Top 10, CWE, SARIF 2.1.0, Zero Trust, NIST CSF</span></div>
+      <div class="skill-row"><span class="skill-row-label">infra / dev</span><span class="skill-row-val">Kali Linux, Proxmox, Docker, Tailscale, GitHub Actions, systemd, Ollama (local LLM), Semgrep, Bandit</span></div>
     </div>
 
     <div class="cv-section">
-      <div class="cv-section-header">// certifications (roadmap)</div>
+      <div class="cv-section-header">// certifications — earned</div>
+      <ul class="cert-list">
+        <li class="cert-item"><div class="cert-icon">✅</div><span class="cert-name">Practical Ethical Hacking</span><span class="cert-date">TCM Security · 2024</span></li>
+        <li class="cert-item"><div class="cert-icon">✅</div><span class="cert-name">Practical Web Hacking</span><span class="cert-date">TCM Security · 2024</span></li>
+        <li class="cert-item"><div class="cert-icon">✅</div><span class="cert-name">Practical API Hacking</span><span class="cert-date">TCM Security · 2024</span></li>
+        <li class="cert-item"><div class="cert-icon">✅</div><span class="cert-name">Practical Bug Bounty</span><span class="cert-date">TCM Security · 2024</span></li>
+        <li class="cert-item"><div class="cert-icon">✅</div><span class="cert-name">Practical Malware Analysis &amp; Triage</span><span class="cert-date">TCM Security · 2024</span></li>
+        <li class="cert-item"><div class="cert-icon">✅</div><span class="cert-name">Practical Windows Forensics</span><span class="cert-date">TCM Security · 2024</span></li>
+        <li class="cert-item"><div class="cert-icon">✅</div><span class="cert-name">Practical Phishing Campaigns</span><span class="cert-date">TCM Security · 2024</span></li>
+        <li class="cert-item"><div class="cert-icon">✅</div><span class="cert-name">Detection Engineering for Beginners</span><span class="cert-date">TCM Security · 2024</span></li>
+        <li class="cert-item"><div class="cert-icon">✅</div><span class="cert-name">Open-Source Intelligence (OSINT) Fundamentals</span><span class="cert-date">TCM Security · 2024</span></li>
+        <li class="cert-item"><div class="cert-icon">✅</div><span class="cert-name">The Definitive GRC Analyst Master Class</span><span class="cert-date">TCM Security · 2024</span></li>
+      </ul>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-header">// certifications — roadmap</div>
       <ul class="cert-list">
         <li class="cert-item"><div class="cert-icon">🎯</div><span class="cert-name">CompTIA Security+</span><span class="cert-date">2027</span></li>
         <li class="cert-item"><div class="cert-icon">⚔️</div><span class="cert-name">CEH — Certified Ethical Hacker</span><span class="cert-date">2027</span></li>
