@@ -8,7 +8,7 @@ enableEmoji = true
 # Change this one line to swap themes:
 #   theme = "terminal"   ← kali-style terminal hacker
 #   theme = "premium"    ← minimalist premium cyberpunk
-theme = "terminal"
+theme = "premium"
 
 [params]
   author       = "GP Singh"
