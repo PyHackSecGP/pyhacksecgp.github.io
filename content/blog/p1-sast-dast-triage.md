@@ -58,7 +58,7 @@ The model sees: rule ID, CWE, severity, file path, and 10 lines of code context.
 {"verdict": "false_positive", "reason": "input is sanitized at line 38"}
 ```
 
-All on-prem via Ollama at `http://100.126.22.55:11434`. No source code leaves the machine.
+All on-prem via a local Ollama endpoint (`http://localhost:11434` by default, override with `OLLAMA_HOST`). No source code leaves the machine.
 
 ## SARIF Export
 
