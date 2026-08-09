@@ -1,4 +1,4 @@
-baseURL = "https://pyhacksecgp.github.io/"
+baseURL = "https://www.greenbladesec.com/"
 languageCode = "en-us"
 title = "GP Singh"
 enableRobotsTXT = true
@@ -60,6 +60,10 @@ theme = "premium"
     name       = "CV"
     url        = "/cv/"
     weight     = 4
+  [[menu.premium]]
+    name       = "Contact"
+    url        = "/#contact"
+    weight     = 5
 
 [markup]
   [markup.highlight]

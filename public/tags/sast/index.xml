@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sast on GP Singh</title><link>https://www.greenbladesec.com/tags/sast/</link><description>Recent content in Sast on GP Singh</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 01 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.greenbladesec.com/tags/sast/index.xml" rel="self" type="application/rss+xml"/><item><title>P1 — SAST+DAST Triage Tool</title><link>https://www.greenbladesec.com/projects/p1-sast-dast-triage/</link><pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate><guid>https://www.greenbladesec.com/projects/p1-sast-dast-triage/</guid><description>Deduplicates Semgrep/Bandit/ZAP findings by CWE+location, scores risk 0-10, runs a local LLM to filter false positives, and exports SARIF 2.1.0 for GitHub Code Scanning.</description></item><item><title>Building a SAST+DAST Triage Tool with AI False-Positive Filtering</title><link>https://www.greenbladesec.com/blog/p1-sast-dast-triage/</link><pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate><guid>https://www.greenbladesec.com/blog/p1-sast-dast-triage/</guid><description>&lt;h2 id="the-problem-with-raw-scanner-output">The Problem with Raw Scanner Output&lt;/h2>
+&lt;p>Run Semgrep and Bandit on the same Python repo and you&amp;rsquo;ll get the same SQLi finding at &lt;code>app.py:42&lt;/code> twice — different rule name, same vulnerability. Add OWASP ZAP for dynamic analysis and the noise multiplies further. Before you can triage what matters, you&amp;rsquo;re deduplicating spreadsheets.&lt;/p>
+&lt;p>P1 solves this.&lt;/p>
+&lt;h2 id="architecture">Architecture&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[Semgrep JSON] [Bandit JSON] [ZAP XML]
+ ↓ ↓ ↓
+ parsers/base.py (unified Finding schema)
+ ↓
+ core/dedup.py ← key: {cwe}:{file}:{line}
+ ↓
+ core/scorer.py ← risk_score 0-10
+ ↓
+ core/llm.py ← hermes3:70b false-positive filter
+ ↓
+ output/sarif_report.py ← SARIF 2.1.0
+&lt;/code>&lt;/pre>&lt;h2 id="cwe-based-deduplication">CWE-Based Deduplication&lt;/h2>
+&lt;p>Rule names are inconsistent across tools. &lt;code>python.lang.security.injection.tainted-sql-string&lt;/code> (Semgrep) and &lt;code>bandit.B608&lt;/code> (Bandit) both describe CWE-89 at the same location. Use the CWE as the canonical identifier:&lt;/p></description></item></channel></rss>

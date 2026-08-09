@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mitre on GP Singh</title><link>https://www.greenbladesec.com/tags/mitre/</link><description>Recent content in Mitre on GP Singh</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.greenbladesec.com/tags/mitre/index.xml" rel="self" type="application/rss+xml"/><item><title>P2 — Threat Model Generator</title><link>https://www.greenbladesec.com/projects/p2-threat-model-generator/</link><pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate><guid>https://www.greenbladesec.com/projects/p2-threat-model-generator/</guid><description>AI-assisted STRIDE threat modelling tool that generates executive-quality HTML reports with MITRE ATT&amp;amp;CK mapping, compliance flagging (GDPR/PCI-DSS), and on-prem LLM narratives from YAML, OpenAPI, Dockerfile, or docker-compose inputs.</description></item><item><title>P3 — AI Log Anomaly Detector</title><link>https://www.greenbladesec.com/projects/p3-log-anomaly-detector/</link><pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate><guid>https://www.greenbladesec.com/projects/p3-log-anomaly-detector/</guid><description>Parses Linux auth logs and journalctl JSON, detects 7 attack patterns mapped to MITRE ATT&amp;amp;CK with confidence scoring, enriches IPs via AbuseIPDB, and sends a local LLM threat assessment.</description></item><item><title>AI Log Anomaly Detector: auth.log to MITRE ATT&amp;CK in 30 Seconds</title><link>https://www.greenbladesec.com/blog/p3-log-anomaly-detector/</link><pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate><guid>https://www.greenbladesec.com/blog/p3-log-anomaly-detector/</guid><description>&lt;h2 id="why-i-built-this">Why I Built This&lt;/h2>
+&lt;p>&lt;code>/var/log/auth.log&lt;/code> is full of signal. Brute forces, privilege escalations, new user accounts — all there. But finding them manually means &lt;code>grep&lt;/code>-ing through thousands of lines. Enterprise SIEMs cost money. This tool is free, local, and takes 30 seconds.&lt;/p>
+&lt;h2 id="detection-engine">Detection Engine&lt;/h2>
+&lt;p>The core is a sliding-window classifier that groups events by IP/user and fires rules when thresholds are crossed:&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Pattern&lt;/th>
+ &lt;th>ATT&amp;amp;CK&lt;/th>
+ &lt;th>Confidence&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>SSH brute force (≥10 failures/5 min)&lt;/td>
+ &lt;td>T1110.001&lt;/td>
+ &lt;td>&lt;code>min(count/50, 1.0)&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Distributed BF (≥5 IPs, same user)&lt;/td>
+ &lt;td>T1110.003&lt;/td>
+ &lt;td>&lt;code>min(ips/30, 1.0)&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Credential stuffing (≥10 fails, ≥5 users)&lt;/td>
+ &lt;td>T1110.004&lt;/td>
+ &lt;td>&lt;code>min(failures/20, 1.0)&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>sudo failures (≥3 in 10 min)&lt;/td>
+ &lt;td>T1548.003&lt;/td>
+ &lt;td>&lt;code>min(count/10, 1.0)&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>su to root&lt;/td>
+ &lt;td>T1548.003&lt;/td>
+ &lt;td>0.85&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>useradd&lt;/td>
+ &lt;td>T1136.001&lt;/td>
+ &lt;td>1.0&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Root SSH login&lt;/td>
+ &lt;td>T1078.003&lt;/td>
+ &lt;td>1.0&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="confidence-scoring">Confidence Scoring&lt;/h2>
+&lt;p>Every anomaly gets a &lt;code>confidence&lt;/code> float 0.0–1.0. A single failed password is 0.02 confidence. 50 failures from the same IP in 5 minutes is 1.0. Triage by &lt;code>confidence × severity&lt;/code> instead of wading through event counts.&lt;/p></description></item></channel></rss>

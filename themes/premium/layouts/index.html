@@ -14,8 +14,8 @@
       </h1>
 
       <p class="hero-sub">
-        Cybersecurity Analyst building security tools with AI.<br>
-        SAST/DAST automation · Autonomous pentest pipeline (ATLAS) · Log anomaly detection.
+        I build security tools that close the gap between detection and action.<br>
+        5 tools shipped · autonomous HTB pipeline · 2.4M domains blocked · zero cloud APIs.
       </p>
 
       <div class="hero-btns">
@@ -59,16 +59,16 @@
     <div class="about-grid">
       <div class="reveal reveal-delay-1">
         <p style="color:var(--text2);font-size:16px;line-height:1.8;margin-bottom:1.25rem;">
-          Cyber Security Analyst at <strong style="color:var(--text1);">lululemon</strong>, Vancouver BC — nearly 4 years in the field
-          spanning SIEM operations, cloud security, penetration testing, and security tooling development.
+          Cyber Security Analyst at <strong style="color:var(--text1);">lululemon</strong>, Vancouver BC — spanning SIEM operations, cloud security, penetration testing, and security tooling development.
         </p>
         <p style="color:var(--text2);font-size:16px;line-height:1.8;margin-bottom:1.25rem;">
-          Deep hands-on with Splunk, IBM QRadar, ELK Stack, AWS GuardDuty, and Azure Sentinel.
-          Okta and Active Directory for IAM/PAM. Pen testing with Nmap, Metasploit, Burp Suite, and Wireshark.
-          Building Python automation for vulnerability triage, anomaly detection, and LLM-assisted false-positive filtering — all on-prem, no data leaves the network.
+          Daily work: Splunk, IBM QRadar, ELK Stack, AWS GuardDuty, Azure Sentinel. IAM/PAM with Okta and Active Directory. Offensive tooling — Nmap, Metasploit, Burp Suite.
+        </p>
+        <p style="color:var(--text2);font-size:16px;line-height:1.8;margin-bottom:1.25rem;">
+          Outside of work: 5 shipped security tools in Python, a self-hosted homelab running Wazuh, Greenbone, and a full vulnerability management pipeline — and an autonomous HTB pentest agent that handles recon through exploitation without human input.
         </p>
         <p style="color:var(--text2);font-size:16px;line-height:1.8;margin-bottom:1.5rem;">
-          TryHackMe top 1%. 10+ TCM Security certifications. Target: Staff Security Engineer by 2029.
+          TryHackMe top 1%. 10+ TCM Security certifications. Target: OSCP 2028, Staff Security Engineer shortly after.
         </p>
         <div class="cert-list">
           <div class="cert-item">
@@ -108,8 +108,8 @@
             <span class="stat-lbl">TryHackMe</span>
           </div>
           <div class="stat-card">
-            <span class="stat-val">$250k</span>
-            <span class="stat-lbl">salary target</span>
+            <span class="stat-val">2.4M</span>
+            <span class="stat-lbl">domains blocked</span>
           </div>
         </div>
       </div>
@@ -133,6 +133,7 @@
           <span class="proj-badge shipped">■ Shipped</span>
         </div>
         <div class="proj-name">P1 — SAST+DAST Triage Tool</div>
+        <div class="proj-result">↓ 60%+ alert volume · deduplicated across 3 scanners · CI-ready SARIF export</div>
         <p class="proj-desc">Deduplicates Semgrep/Bandit/ZAP findings by CWE+location, scores risk 0–10, LLM false-positive filter, SARIF 2.1.0 export for GitHub Code Scanning.</p>
         <div class="proj-tags">
           <span class="tag">Python</span><span class="tag">Semgrep</span><span class="tag">OWASP ZAP</span><span class="tag">SARIF</span><span class="tag">Ollama</span>
@@ -149,6 +150,7 @@
           <span class="proj-badge shipped">■ Shipped</span>
         </div>
         <div class="proj-name">P2 — Threat Model Generator</div>
+        <div class="proj-result">Full STRIDE report in &lt;30s · compliance flags auto-detected · exec-ready HTML output</div>
         <p class="proj-desc">STRIDE analysis across all components. MITRE ATT&CK + OWASP + NIST mapping. Auto-flags GDPR/PCI-DSS violations. On-prem LLM narratives. Executive HTML report with Chart.js visuals.</p>
         <div class="proj-tags">
           <span class="tag">Python</span><span class="tag">STRIDE</span><span class="tag">MITRE ATT&CK</span><span class="tag">Ollama</span>
@@ -165,6 +167,7 @@
           <span class="proj-badge shipped">■ Shipped</span>
         </div>
         <div class="proj-name">P3 — AI Log Anomaly Detector</div>
+        <div class="proj-result">7 MITRE ATT&CK patterns · AbuseIPDB enrichment · real-time alerts on live homelab traffic</div>
         <p class="proj-desc">Parses auth.log + journalctl JSON, detects 7 attack patterns mapped to MITRE ATT&CK with confidence scoring. AbuseIPDB enrichment, email alerts, local LLM assessment.</p>
         <div class="proj-tags">
           <span class="tag">Python</span><span class="tag">MITRE ATT&CK</span><span class="tag">AbuseIPDB</span><span class="tag">Ollama</span>
@@ -181,7 +184,8 @@
           <span class="proj-badge shipped">■ Shipped</span>
         </div>
         <div class="proj-name">P4 — Mini-CRS</div>
-        <p class="proj-desc">Autonomous vulnerability discovery inspired by DARPA AIxCC. AFL++ fuzzing → ASan/GDB triage → LLM root cause (CWE) → patch generation → recompile + validate. 100% fix rate on demo target. Pluggable LLM: Ollama, Claude, OpenAI.</p>
+        <div class="proj-result">100% automated fix rate · fuzz → triage → patch → validate, zero human input</div>
+        <p class="proj-desc">Autonomous vulnerability discovery inspired by DARPA AIxCC. AFL++ fuzzing → ASan/GDB triage → LLM root cause (CWE) → patch generation → recompile + validate. Pluggable LLM: Ollama, Claude, OpenAI.</p>
         <div class="proj-tags">
           <span class="tag">Python</span><span class="tag">AFL++</span><span class="tag">AddressSanitizer</span><span class="tag">CWE</span><span class="tag">Claude</span>
         </div>
@@ -197,6 +201,7 @@
           <span class="proj-badge shipped">■ Shipped</span>
         </div>
         <div class="proj-name">P5 — ATLAS (Autonomous Pentest Pipeline)</div>
+        <div class="proj-result">Rooted HTB machines autonomously · recon → exploit → report without human input</div>
         <p class="proj-desc">Autonomous HTB/CTF pentest agent: recon → enum → web → exploit → report. Parallel tool execution — nikto+gobuster, enum4linux+ldap+snmp run simultaneously. Human-in-the-loop checkpoints. LLM-guided at every stage.</p>
         <div class="proj-tags">
           <span class="tag">Python</span><span class="tag">nmap</span><span class="tag">gobuster</span><span class="tag">ThreadPoolExecutor</span><span class="tag">Ollama</span>
@@ -452,5 +457,23 @@
     .catch(function() {});
 })();
 </script>
+
+<!-- ── Contact ── -->
+<section id="contact" style="background: var(--bg2);">
+  <div class="container">
+    <div class="contact-inner reveal">
+      <div class="section-label">// contact</div>
+      <h2 class="section-title">Let's Talk</h2>
+      <p style="color:var(--text2);font-size:18px;line-height:1.75;max-width:560px;margin-bottom:2.5rem;">
+        Open to <strong style="color:var(--text);">Senior / Staff Security Engineer</strong> roles — Vancouver or remote. I bring production tooling, a working offensive lab, and real detection engineering experience. Not looking for recruiters, looking for engineers.
+      </p>
+      <div class="contact-btns">
+        <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener" class="btn-primary">Connect on LinkedIn →</a>
+        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" class="btn-ghost">View GitHub →</a>
+        <a href="https://dev.to/pyhacksecgp" target="_blank" rel="noopener" class="btn-ghost">Read on dev.to →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 {{ end }}

@@ -82,19 +82,16 @@
 
     typeSequence([
       { type: 'cmd',   text: 'whoami' },
-      { type: 'out',   text: 'GP Singh — Security Engineer, Vancouver BC' },
+      { type: 'out',   text: 'GP Singh' },
+      { type: 'out',   text: 'Cybersecurity Analyst I · Vancouver, BC' },
       { type: 'blank'  },
-      { type: 'cmd',   text: 'ls ./shipped/' },
-      { type: 'out',   text: 'p1-sast-dast/  p2-threat-model/  p3-log-anomaly/' },
-      { type: 'out',   text: 'p4-mini-crs/   p5-atlas/' },
+      { type: 'cmd',   text: 'skills --top' },
+      { type: 'out',   text: 'Python · Burp Suite · MITRE ATT&CK' },
+      { type: 'out',   text: 'SAST/DAST · Log Analysis · Ollama' },
       { type: 'blank'  },
-      { type: 'cmd',   text: 'atlas --target htb --mode auto' },
-      { type: 'out',   text: '[+] recon complete — 3 open ports' },
-      { type: 'out',   text: '[+] exploiting CVE-2021-3493...' },
-      { type: 'out',   text: '[✓] root — writing report' },
-      { type: 'blank'  },
-      { type: 'cmd',   text: 'pihole status' },
-      { type: 'out',   text: '[✓] blocking 2,460,331 domains — DoH active' },
+      { type: 'cmd',   text: 'status' },
+      { type: 'out',   text: '2 tools shipped // P4 in progress' },
+      { type: 'out',   text: 'target: Senior SecEng by 2029' },
       { type: 'blank'  },
     ], container);
   });

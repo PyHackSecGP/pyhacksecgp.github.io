@@ -452,18 +452,6 @@ section {
   margin-bottom: .5rem;
 }
 
-.proj-result {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--accent);
-  background: rgba(0,255,178,.06);
-  border: 1px solid rgba(0,255,178,.15);
-  border-radius: 4px;
-  padding: .3rem .75rem;
-  margin-bottom: .75rem;
-  display: inline-block;
-}
-
 .proj-desc {
   font-size: 14px;
   color: var(--text2);
@@ -834,17 +822,6 @@ section {
 .skill-row:last-child { border-bottom: none; }
 .skill-row-label { color: var(--accent); font-family: var(--mono); font-size: 12px; }
 .skill-row-val { color: var(--text2); }
-
-/* ── Contact section ─────────────────────────────────────── */
-.contact-inner {
-  max-width: 680px;
-}
-
-.contact-btns {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
 
 /* ── Homelab section ─────────────────────────────────────── */
 .homelab-grid {
