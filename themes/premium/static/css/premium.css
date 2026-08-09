@@ -823,6 +823,119 @@ section {
 .skill-row-label { color: var(--accent); font-family: var(--mono); font-size: 12px; }
 .skill-row-val { color: var(--text2); }
 
+/* ── Homelab section ─────────────────────────────────────── */
+.homelab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.hl-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.hl-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(0,255,178,.05), transparent 60%);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.hl-card:hover {
+  border-color: rgba(0,255,178,.2);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.35), 0 0 0 1px rgba(0,255,178,.08);
+}
+
+.hl-card:hover::before { opacity: 1; }
+
+.hl-icon {
+  font-size: 22px;
+  margin-bottom: .75rem;
+}
+
+.hl-name {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: .4rem;
+}
+
+.hl-desc {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: .85rem;
+}
+
+.hl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+
+.hl-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 1rem;
+}
+
+.hl-benefit-card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: border-color .2s;
+}
+
+.hl-benefit-card:hover { border-color: rgba(0,255,178,.2); }
+
+.hl-benefit-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: rgba(0,255,178,.06);
+  border: 1px solid rgba(0,255,178,.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hl-benefit-title {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: .35rem;
+}
+
+.hl-benefit-desc {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+  .hl-benefits { grid-template-columns: 1fr; }
+  .homelab-grid { grid-template-columns: 1fr; }
+}
+
 /* ── Footer ──────────────────────────────────────────────── */
 .site-footer {
   border-top: 1px solid var(--border);

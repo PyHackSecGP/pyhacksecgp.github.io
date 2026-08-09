@@ -292,32 +292,165 @@
   </div>
 </section>
 
+<!-- ── Homelab ── -->
+<section id="homelab" style="background: var(--bg2);">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">// homelab</div>
+      <h2 class="section-title">Production<br>Security Lab</h2>
+      <p class="section-sub">A real self-hosted infra stack — not a tutorial VM. Used daily for security practice, tool development, monitoring, and offensive lab work.</p>
+    </div>
+
+    <div class="homelab-grid reveal reveal-delay-1">
+      <div class="hl-card">
+        <div class="hl-icon">🖥️</div>
+        <div class="hl-name">Proxmox VE</div>
+        <div class="hl-desc">Bare-metal hypervisor. 10+ VMs &amp; LXCs, ZFS RAID mirror, 64GB RAM.</div>
+        <div class="hl-tags"><span class="tag">Hypervisor</span><span class="tag">ZFS</span></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🔥</div>
+        <div class="hl-name">OPNsense</div>
+        <div class="hl-desc">Firewall VM with IDS/IPS, VLANs, traffic rules, and WAN edge protection.</div>
+        <div class="hl-tags"><span class="tag">Firewall</span><span class="tag">IDS/IPS</span></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🛡️</div>
+        <div class="hl-name">Wazuh SIEM</div>
+        <div class="hl-desc">8 agents across the homelab. Real-time threat detection, file integrity monitoring, compliance checks.</div>
+        <div class="hl-tags"><span class="tag">SIEM</span><span class="tag">8 agents</span></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🔍</div>
+        <div class="hl-name">Greenbone + DefectDojo</div>
+        <div class="hl-desc">Automated vuln scanning pipeline — Greenbone discovers, DefectDojo tracks and triages findings.</div>
+        <div class="hl-tags"><span class="tag">Vuln Mgmt</span><span class="tag">CVE</span></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🌐</div>
+        <div class="hl-name">Pi-hole + DoH</div>
+        <div class="hl-desc">Network-wide DNS filtering — 2.4M blocked domains. Cloudflare DoH upstream via cloudflared. DNSSEC enabled.</div>
+        <div class="hl-tags"><span class="tag">DNS</span><span class="tag">DoH</span><span class="tag">DNSSEC</span></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">📊</div>
+        <div class="hl-name">Grafana + Prometheus</div>
+        <div class="hl-desc">Live metrics across all hosts — CPU, RAM, network, disk. Node exporters on every container.</div>
+        <div class="hl-tags"><span class="tag">Monitoring</span><span class="tag">Metrics</span></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🤖</div>
+        <div class="hl-name">Ollama (Local LLM)</div>
+        <div class="hl-desc">Hermes 3 70B, Qwen, Llama running on-prem. Powers all security tools — no data leaves the network.</div>
+        <div class="hl-tags"><span class="tag">LLM</span><span class="tag">On-prem</span><span class="tag">AI</span></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🎯</div>
+        <div class="hl-name">Kali + ATLAS Lab</div>
+        <div class="hl-desc">Dedicated offensive security VM. Runs ATLAS autonomous pentest pipeline for HTB/CTF targets.</div>
+        <div class="hl-tags"><span class="tag">Kali</span><span class="tag">Pentest</span><span class="tag">HTB</span></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🕸️</div>
+        <div class="hl-name">Traefik + Cloudflare</div>
+        <div class="hl-desc">Reverse proxy with zero-trust tunnel. All services exposed via subdomain with TLS — no open ports.</div>
+        <div class="hl-tags"><span class="tag">Reverse Proxy</span><span class="tag">Zero Trust</span></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🍯</div>
+        <div class="hl-name">Cowrie Honeypot</div>
+        <div class="hl-desc">SSH/Telnet honeypot capturing attacker TTPs. Logs credential attempts and lateral movement patterns.</div>
+        <div class="hl-tags"><span class="tag">Honeypot</span><span class="tag">Deception</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:3.5rem;" class="reveal">
+      <div class="section-label" style="margin-bottom:1.5rem;">// why it matters</div>
+      <div class="hl-benefits">
+        <div class="hl-benefit-card">
+          <div class="hl-benefit-icon">📡</div>
+          <div>
+            <div class="hl-benefit-title">Real traffic, real threats</div>
+            <div class="hl-benefit-desc">Wazuh watches live internet-facing traffic. Not simulated data — actual SSH brute force, port scans, and web probes logged daily.</div>
+          </div>
+        </div>
+        <div class="hl-benefit-card">
+          <div class="hl-benefit-icon">🔬</div>
+          <div>
+            <div class="hl-benefit-title">Full vuln management pipeline</div>
+            <div class="hl-benefit-desc">Greenbone scans the homelab weekly. Findings flow into DefectDojo for triage — the same workflow used in enterprise AppSec programs.</div>
+          </div>
+        </div>
+        <div class="hl-benefit-card">
+          <div class="hl-benefit-icon">🧠</div>
+          <div>
+            <div class="hl-benefit-title">On-prem AI lab</div>
+            <div class="hl-benefit-desc">All LLM calls go to local Ollama. Every security tool — SAST triage, log anomaly detection, threat models — runs without touching a cloud API.</div>
+          </div>
+        </div>
+        <div class="hl-benefit-card">
+          <div class="hl-benefit-icon">⚔️</div>
+          <div>
+            <div class="hl-benefit-title">Dedicated offensive lab</div>
+            <div class="hl-benefit-desc">Kali VM isolated on its own subnet. ATLAS autonomous pipeline runs HTB targets here. Physical separation between red and blue environments.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem;text-align:center;" class="reveal">
+      <a href="https://grafana.greenbladesec.com" target="_blank" rel="noopener" class="btn-ghost" style="display:inline-flex;">Live Metrics Dashboard ↗</a>
+    </div>
+  </div>
+</section>
+
 <!-- ── Blog ── -->
 <section id="blog">
   <div class="container">
     <div class="reveal">
       <div class="section-label">// writing</div>
       <h2 class="section-title">Security Lab Notes</h2>
-      <p class="section-sub">Technical writeups on tools I build, machines I root, and concepts I'm learning.</p>
+      <p class="section-sub">Technical writeups on tools I build, machines I root, and concepts I'm learning. Published on dev.to.</p>
     </div>
-    <div class="blog-grid">
-      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+    <div class="blog-grid" id="devto-posts">
       <div class="glass-card reveal">
-        <div class="post-date">{{ .Date.Format "2006-01-02" }}</div>
-        <div class="post-tags">{{ range .Params.tags }}<span class="post-tag">#{{ . }}</span>{{ end }}</div>
-        <a href="{{ .RelPermalink }}" class="post-title-link">{{ .Title }}</a>
-        <p class="post-summary">{{ .Summary | truncate 140 }}</p>
+        <p style="color:var(--text3);font-family:var(--mono);font-size:13px;">// loading posts...</p>
       </div>
-      {{ else }}
-      <div class="glass-card reveal">
-        <p style="color:var(--text3);font-family:var(--mono);font-size:13px;">// writeups incoming</p>
-      </div>
-      {{ end }}
     </div>
     <div style="margin-top:2rem;text-align:center;">
-      <a href="/blog/" class="btn-ghost" style="display:inline-flex;">All posts →</a>
+      <a href="https://dev.to/pyhacksecgp" target="_blank" rel="noopener" class="btn-ghost" style="display:inline-flex;">All posts on dev.to ↗</a>
     </div>
   </div>
 </section>
+
+<script>
+(function() {
+  fetch('https://dev.to/api/articles?username=pyhacksecgp&per_page=6')
+    .then(function(r) { return r.json(); })
+    .then(function(articles) {
+      var grid = document.getElementById('devto-posts');
+      if (!articles || !articles.length) return;
+      var seen = {};
+      var html = '';
+      articles.forEach(function(a) {
+        if (seen[a.title]) return;
+        seen[a.title] = true;
+        var date = a.published_at ? a.published_at.slice(0, 10) : '';
+        var tags = (a.tag_list || []).slice(0, 4).map(function(t) {
+          return '<span class="post-tag">#' + t + '</span>';
+        }).join('');
+        var summary = (a.description || '').slice(0, 140);
+        html += '<div class="glass-card reveal">'
+          + '<div class="post-date">' + date + '</div>'
+          + '<div class="post-tags">' + tags + '</div>'
+          + '<a href="' + a.url + '" target="_blank" rel="noopener" class="post-title-link">' + a.title + '</a>'
+          + '<p class="post-summary">' + summary + '</p>'
+          + '</div>';
+      });
+      grid.innerHTML = html;
+    })
+    .catch(function() {});
+})();
+</script>
 
 {{ end }}

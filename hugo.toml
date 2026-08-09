@@ -49,9 +49,13 @@ theme = "premium"
     url        = "/projects/"
     weight     = 2
   [[menu.premium]]
+    name       = "Homelab"
+    url        = "/#homelab"
+    weight     = 3
+  [[menu.premium]]
     name       = "Blog"
     url        = "/blog/"
-    weight     = 3
+    weight     = 4
   [[menu.premium]]
     name       = "CV"
     url        = "/cv/"
