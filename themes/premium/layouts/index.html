@@ -302,7 +302,10 @@
   <div class="container">
     <div class="reveal">
       <div class="section-label">// homelab</div>
-      <h2 class="section-title">Production<br>Security Lab</h2>
+      <h2 class="section-title">
+        Production Security Lab
+        <span class="homelab-live-badge">live</span>
+      </h2>
       <p class="section-sub">A real self-hosted infra stack — not a tutorial VM. Used daily for security practice, tool development, monitoring, and offensive lab work.</p>
     </div>
 
@@ -369,42 +372,64 @@
       </div>
     </div>
 
+    <!-- live metrics -->
     <div style="margin-top:3.5rem;" class="reveal">
-      <div class="section-label" style="margin-bottom:1.5rem;">// why it matters</div>
-      <div class="hl-benefits">
-        <div class="hl-benefit-card">
-          <div class="hl-benefit-icon">📡</div>
-          <div>
-            <div class="hl-benefit-title">Real traffic, real threats</div>
-            <div class="hl-benefit-desc">Wazuh watches live internet-facing traffic. Not simulated data — actual SSH brute force, port scans, and web probes logged daily.</div>
-          </div>
+      <div class="section-label" style="margin-bottom:1.5rem;">// live metrics</div>
+      <div class="homelab-infra" style="margin-top:0;margin-bottom:1.5rem;">
+        <div class="infra-stat">
+          <span class="infra-val">8</span>
+          <span class="infra-key">VMs / LXCs</span>
         </div>
-        <div class="hl-benefit-card">
-          <div class="hl-benefit-icon">🔬</div>
-          <div>
-            <div class="hl-benefit-title">Full vuln management pipeline</div>
-            <div class="hl-benefit-desc">Greenbone scans the homelab weekly. Findings flow into DefectDojo for triage — the same workflow used in enterprise AppSec programs.</div>
-          </div>
+        <div class="infra-stat">
+          <span class="infra-val">20+</span>
+          <span class="infra-key">Services</span>
         </div>
-        <div class="hl-benefit-card">
-          <div class="hl-benefit-icon">🧠</div>
-          <div>
-            <div class="hl-benefit-title">On-prem AI lab</div>
-            <div class="hl-benefit-desc">All LLM calls go to local Ollama. Every security tool — SAST triage, log anomaly detection, threat models — runs without touching a cloud API.</div>
-          </div>
+        <div class="infra-stat">
+          <span class="infra-val">64 GB</span>
+          <span class="infra-key">LLM RAM</span>
         </div>
-        <div class="hl-benefit-card">
-          <div class="hl-benefit-icon">⚔️</div>
-          <div>
-            <div class="hl-benefit-title">Dedicated offensive lab</div>
-            <div class="hl-benefit-desc">Kali VM isolated on its own subnet. ATLAS autonomous pipeline runs HTB targets here. Physical separation between red and blue environments.</div>
+        <div class="infra-stat">
+          <span class="infra-val">7.3 TB</span>
+          <span class="infra-key">ZFS Pool</span>
+        </div>
+      </div>
+      <div class="homelab-grid" style="margin-top:0;">
+        <div class="metric-panel">
+          <div class="metric-panel-header">
+            <div class="metric-dot"></div>
+            <span class="metric-label">CPU Usage %</span>
           </div>
+          <iframe src="https://grafana.greenbladesec.com/d-solo/homelab-overview/homelab-overview?orgId=1&panelId=1&theme=dark&from=now-1h&to=now&refresh=30s" height="180" loading="lazy"></iframe>
+        </div>
+        <div class="metric-panel">
+          <div class="metric-panel-header">
+            <div class="metric-dot" style="background:var(--blue);box-shadow:0 0 6px var(--blue);"></div>
+            <span class="metric-label">RAM Usage %</span>
+          </div>
+          <iframe src="https://grafana.greenbladesec.com/d-solo/homelab-overview/homelab-overview?orgId=1&panelId=2&theme=dark&from=now-1h&to=now&refresh=30s" height="180" loading="lazy"></iframe>
+        </div>
+        <div class="metric-panel">
+          <div class="metric-panel-header">
+            <div class="metric-dot" style="background:var(--purple);box-shadow:0 0 6px var(--purple);"></div>
+            <span class="metric-label">Network In (MB/s)</span>
+          </div>
+          <iframe src="https://grafana.greenbladesec.com/d-solo/homelab-overview/homelab-overview?orgId=1&panelId=3&theme=dark&from=now-1h&to=now&refresh=30s" height="180" loading="lazy"></iframe>
+        </div>
+        <div class="metric-panel">
+          <div class="metric-panel-header">
+            <div class="metric-dot" style="background:#f59e0b;box-shadow:0 0 6px #f59e0b;"></div>
+            <span class="metric-label">Disk Usage %</span>
+          </div>
+          <iframe src="https://grafana.greenbladesec.com/d-solo/homelab-overview/homelab-overview?orgId=1&panelId=5&theme=dark&from=now-1h&to=now&refresh=30s" height="180" loading="lazy"></iframe>
         </div>
       </div>
     </div>
 
     <div style="margin-top:2.5rem;text-align:center;" class="reveal">
-      <a href="https://grafana.greenbladesec.com" target="_blank" rel="noopener" class="btn-ghost" style="display:inline-flex;">Live Metrics Dashboard ↗</a>
+      <a href="https://grafana.greenbladesec.com/d/homelab-overview/homelab-overview?orgId=1&from=now-1h&to=now"
+         target="_blank" rel="noopener" class="btn-ghost" style="display:inline-flex;">
+        Full dashboard →
+      </a>
     </div>
   </div>
 </section>
