@@ -19,7 +19,7 @@
     <div class="p-output" data-type-seq="output">
       <div style="margin-bottom:.5rem;">
         <span style="color:#c9d1d9;font-size:18px;font-weight:700;">GP Singh</span>
-        <span class="text-muted" style="font-size:13px;"> &nbsp;·&nbsp; Cybersecurity Analyst I &nbsp;·&nbsp; Vancouver, BC</span>
+        <span class="text-muted" style="font-size:13px;"> &nbsp;·&nbsp; Cyber Security Engineer &nbsp;·&nbsp; Vancouver, BC</span>
       </div>
       <div class="text-muted" style="font-size:13px;max-width:580px;">
         Building security tools with AI. SAST/DAST automation, log anomaly detection,
@@ -146,5 +146,77 @@
 </ul>
 
 <a href="/blog/" style="font-size:12px;">view all posts →</a>
+
+<hr class="divider">
+
+<!-- CVE feed -->
+<div class="section-cmd">
+  <span>$</span>
+  <span class="cmd">curl</span>
+  <span class="arg">-s api.nvd.nist.gov | jq '.cves[:5]'</span>
+</div>
+<div id="cve-feed" style="font-family:var(--mono);font-size:12px;margin-bottom:1.5rem;min-height:60px;">
+  <span class="text-muted">// loading threat feed...</span>
+</div>
+<a href="https://nvd.nist.gov/vuln/search" target="_blank" rel="noopener" style="font-size:12px;">view all CVEs →</a>
+
+<hr class="divider">
+
+<!-- uptime -->
+<div class="section-cmd">
+  <span>$</span>
+  <span class="cmd">systemctl</span>
+  <span class="arg">status homelab --all</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2rem;align-items:center;">
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fhome.greenbladesec.com&style=flat-square&label=homarr&up_color=238636&down_color=da3633" alt="homarr">
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fgrafana.greenbladesec.com&style=flat-square&label=grafana&up_color=238636&down_color=da3633" alt="grafana">
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fjellyfin.greenbladesec.com&style=flat-square&label=jellyfin&up_color=238636&down_color=da3633" alt="jellyfin">
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fimmich.greenbladesec.com&style=flat-square&label=immich&up_color=238636&down_color=da3633" alt="immich">
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fgreenbone.greenbladesec.com&style=flat-square&label=greenbone&up_color=238636&down_color=da3633" alt="greenbone">
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fcloud.greenbladesec.com&style=flat-square&label=nextcloud&up_color=238636&down_color=da3633" alt="nextcloud">
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fwazuh.greenbladesec.com&style=flat-square&label=wazuh&up_color=238636&down_color=da3633" alt="wazuh">
+</div>
+
+<script>
+(async function loadCVEFeed() {
+  const el = document.getElementById('cve-feed');
+  const sevColor = {CRITICAL:'#f85149',HIGH:'#e3b341',MEDIUM:'#d29922',LOW:'#3fb950',NONE:'#8b949e'};
+
+  try {
+    const res = await fetch(
+      'https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=5&sortBy=published&sortOrder=desc',
+      {headers:{'Accept':'application/json'}}
+    );
+    if (!res.ok) throw new Error('nvd error');
+    const data = await res.json();
+
+    const rows = data.vulnerabilities.map(({cve}) => {
+      const m31 = cve.metrics?.cvssMetricV31?.[0]?.cvssData;
+      const m30 = cve.metrics?.cvssMetricV30?.[0]?.cvssData;
+      const m2  = cve.metrics?.cvssMetricV2?.[0]?.cvssData;
+      const metric = m31 || m30 || m2;
+      const sev   = metric?.baseSeverity || 'UNKNOWN';
+      const score = metric?.baseScore ?? '?';
+      const color = sevColor[sev] || '#8b949e';
+      const desc  = (cve.descriptions.find(d => d.lang === 'en')?.value || '');
+      const short = desc.length > 120 ? desc.slice(0, 120) + '…' : desc;
+      const date  = cve.published?.slice(0, 10) || '';
+
+      return `<div style="margin-bottom:.7rem;border-left:2px solid ${color};padding-left:.6rem;">
+        <span style="color:${color};font-weight:700;">[${sev}]</span>
+        <a href="https://nvd.nist.gov/vuln/detail/${cve.id}" target="_blank" rel="noopener"
+           style="color:var(--orange);margin:0 .4rem;text-decoration:none;">${cve.id}</a>
+        <span style="color:#8b949e;font-size:11px;">CVSS ${score} · ${date}</span>
+        <div style="color:#c9d1d9;margin-top:.2rem;font-size:11px;line-height:1.4;">${short}</div>
+      </div>`;
+    });
+
+    el.innerHTML = rows.join('');
+  } catch (e) {
+    el.innerHTML = '<span class="text-muted">// threat feed temporarily unavailable</span>';
+  }
+})();
+</script>
 
 {{ end }}

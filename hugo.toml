@@ -13,12 +13,13 @@ theme = "premium"
 [params]
   author       = "GP Singh"
   handle       = "pyhacksecgp"
-  role         = "Cybersecurity Engineer"
+  role         = "Cyber Security Engineer"
   location     = "Vancouver, BC"
-  description  = "Building agentic security tools. Long-term target: CISO."
+  description  = "Cyber Security Engineer at lululemon. Built VM automation that cut CVE-to-ticket time from days to seconds. 5 shipped security tools."
   github       = "https://github.com/PyHackSecGP"
   linkedin     = "https://linkedin.com/in/gurpreet-singh-cyber"
-  email        = "github.com/PyHackSecGP"
+  devto        = "https://dev.to/pyhacksecgp"
+  email        = "security@okredirect.com"
 
 # terminal theme menu (kali-prompt style)
 [menu]
@@ -49,7 +50,7 @@ theme = "premium"
     url        = "/projects/"
     weight     = 2
   [[menu.premium]]
-    name       = "Homelab"
+    name       = "GP's Lab"
     url        = "/#homelab"
     weight     = 3
   [[menu.premium]]
