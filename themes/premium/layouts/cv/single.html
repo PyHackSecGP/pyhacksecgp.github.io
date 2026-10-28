@@ -4,11 +4,12 @@
   <div class="cv-hero container">
     <div class="section-label">// curriculum vitae</div>
     <h1>Gurpreet Singh Ahluwalia</h1>
-    <p style="color:var(--text2);font-size:16px;margin-bottom:.4rem;">Cyber Security Engineer · Vancouver, BC, Canada</p>
-    <p style="color:var(--text3);font-family:var(--mono);font-size:13px;margin-bottom:1.5rem;">lululemon · TryHackMe Top 1% · MS Information Security</p>
+    <p style="color:var(--text2);font-size:16px;margin-bottom:.4rem;">AI-Native Security Engineer · Vancouver, BC · Open to US remote</p>
+    <p style="color:var(--text3);font-family:var(--mono);font-size:13px;margin-bottom:1.5rem;">lululemon · 8+ shipped AI+security tools · TryHackMe Top 1% · MS Information Security</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;">
       <a href="{{ .Site.Params.github }}" target="_blank" class="btn-primary">GitHub ↗</a>
       <a href="{{ .Site.Params.linkedin }}" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+      <a href="mailto:{{ .Site.Params.email }}" class="btn-ghost">Email ↗</a>
     </div>
   </div>
 
@@ -24,14 +25,15 @@
           <div class="cv-title">Cyber Security Analyst</div>
           <div class="cv-org">lululemon · Vancouver, BC</div>
           <ul class="cv-bullets">
-            <li>SIEM operations using Splunk, IBM QRadar, and Azure Sentinel — monitoring, alert triage, and incident response</li>
+            <li>Built AWS Lambda vulnerability management pipeline correlating Wiz, MDE, Qualys, Recorded Future — cut CVE-to-ticket time from <strong>days to seconds</strong> after adding AI contextualization against CISA KEV</li>
+            <li>SIEM operations across Splunk, IBM QRadar, Azure Sentinel — monitoring, triage, incident response</li>
             <li>Real-time threat detection with AWS GuardDuty and Microsoft Defender; cloud security posture management</li>
             <li>SAST/DAST vulnerability triage and remediation guidance for development teams across product lifecycle</li>
-            <li>Security tooling development in Python — automated scanners, parsers, SARIF report generators, LLM FP filtering</li>
-            <li>Log analysis and anomaly detection using rule-based engines mapped to MITRE ATT&CK and local Ollama models</li>
+            <li>Security tooling in Python — scanners, parsers, SARIF generators, LLM false-positive filtering via Ollama</li>
+            <li>Log analysis + anomaly detection mapped to MITRE ATT&CK with local Ollama models (no cloud egress)</li>
             <li>IAM/PAM administration — Okta, Active Directory, AWS IAM; privilege access reviews and entitlement management</li>
-            <li>Penetration testing of network infrastructure, web applications, and APIs using Nmap, Metasploit, Burp Suite, Wireshark</li>
-            <li>Threat modelling, OWASP Top 10 review, and data security governance (DLP, classification, Microsoft Purview)</li>
+            <li>Penetration testing of network infrastructure, web apps, and APIs — Nmap, Metasploit, Burp Suite, Wireshark</li>
+            <li>Threat modelling, OWASP Top 10 review, data security governance (DLP, classification, Microsoft Purview)</li>
           </ul>
         </div>
       </div>
@@ -107,6 +109,37 @@
         </div>
       </div>
       <div class="cv-row">
+        <div class="cv-date-col">2026</div>
+        <div>
+          <div class="cv-title"><a href="https://github.com/PyHackSecGP/p5-atlas">P5 — ATLAS (Autonomous Pentest Pipeline)</a></div>
+          <ul class="cv-bullets">
+            <li>6-stage multi-agent pipeline: recon → enum → web → exploit → PrivEsc (SSH) → report — runs autonomously</li>
+            <li>Tiered Claude pricing + prompt caching cuts token cost per machine; parallel tool execution (nikto+gobuster simultaneously)</li>
+            <li>NSE + hydra + enum4linux integration; auto-mode for unattended HTB/CTF runs with human-in-the-loop checkpoints</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-row">
+        <div class="cv-date-col">2026</div>
+        <div>
+          <div class="cv-title">P6 — Council (5-Persona AI Briefings)</div>
+          <ul class="cv-bullets">
+            <li>5-persona AI briefing system (security, finance, health, career, geopolitics) with distinct TTS voice per persona</li>
+            <li>systemd-scheduled 07:00 + 19:00 daily briefings on dedicated LXC; private Forgejo-hosted</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-row">
+        <div class="cv-date-col">2026</div>
+        <div>
+          <div class="cv-title">AI Hacking Team (CrewAI)</div>
+          <ul class="cv-bullets">
+            <li>Multi-agent AI red team: 5 Hermes-3 personas orchestrated via CrewAI (recon lead, exploit dev, post-ex, reporter, blue-team shadow)</li>
+            <li>Scope guard middleware blocks out-of-scope operations; Flask status dashboard on port 9000</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-row">
         <div class="cv-date-col">2025–now</div>
         <div>
           <div class="cv-title"><a href="https://github.com/PyHackSecGP/ctf-lab">CTF Lab</a></div>
@@ -145,11 +178,13 @@
     </div>
 
     <div class="cv-section">
-      <div class="cv-section-header">// certifications — roadmap</div>
+      <div class="cv-section-header">// focus — 2027 sprint</div>
       <ul class="cert-list">
-        <li class="cert-item"><div class="cert-icon">🎯</div><span class="cert-name">CompTIA Security+</span><span class="cert-date">2027</span></li>
-        <li class="cert-item"><div class="cert-icon">⚔️</div><span class="cert-name">CEH — Certified Ethical Hacker</span><span class="cert-date">2027</span></li>
-        <li class="cert-item"><div class="cert-icon">💀</div><span class="cert-name">OSCP — Offensive Security</span><span class="cert-date">2028</span></li>
+        <li class="cert-item"><div class="cert-icon">🧠</div><span class="cert-name">AI-Native Security Engineer — portfolio over certs</span><span class="cert-date">active</span></li>
+        <li class="cert-item"><div class="cert-icon">🎯</div><span class="cert-name">Senior Security Engineer role · $200k USD remote</span><span class="cert-date">Jun 2027</span></li>
+        <li class="cert-item"><div class="cert-icon">🚩</div><span class="cert-name">HTB weekly + Pro Labs (Dante, Offshore)</span><span class="cert-date">2027</span></li>
+        <li class="cert-item"><div class="cert-icon">🎤</div><span class="cert-name">BSides Vancouver talk — "Autonomous HTB w/ Claude agents"</span><span class="cert-date">2027</span></li>
+        <li class="cert-item"><div class="cert-icon">🏃</div><span class="cert-name">BMO Vancouver Marathon</span><span class="cert-date">May 2, 2027</span></li>
       </ul>
     </div>
 

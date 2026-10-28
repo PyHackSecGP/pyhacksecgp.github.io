@@ -13,9 +13,9 @@ theme = "premium"
 [params]
   author       = "GP Singh"
   handle       = "pyhacksecgp"
-  role         = "Cyber Security Engineer"
-  location     = "Vancouver, BC"
-  description  = "Cyber Security Engineer at lululemon. Built VM automation that cut CVE-to-ticket time from days to seconds. 5 shipped security tools."
+  role         = "AI-Native Security Engineer"
+  location     = "Vancouver, BC · Remote"
+  description  = "AI-native security engineer at lululemon. 8+ shipped AI+security tools: autonomous pentest pipeline, LLM-driven threat modeling, SAST/DAST triage, log anomaly detection. Cut CVE-to-ticket time from days to seconds."
   github       = "https://github.com/PyHackSecGP"
   linkedin     = "https://linkedin.com/in/gurpreet-singh-cyber"
   devto        = "https://dev.to/pyhacksecgp"
@@ -50,7 +50,7 @@ theme = "premium"
     url        = "/projects/"
     weight     = 2
   [[menu.premium]]
-    name       = "GP's Lab"
+    name       = "Lab"
     url        = "/#homelab"
     weight     = 3
   [[menu.premium]]

@@ -2,11 +2,25 @@
 <html lang="en">
 <head>{{ partial "head.html" . }}</head>
 <body>
+  <div class="scroll-progress" id="scroll-progress"></div>
   <canvas id="particle-canvas" aria-hidden="true"></canvas>
   {{ partial "nav.html" . }}
   {{ block "main" . }}{{ end }}
   {{ partial "footer.html" . }}
   <script src="/js/particles.js"></script>
   <script src="/js/premium.js"></script>
+  <script>
+  (function() {
+    var bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+    function tick() {
+      var h = document.documentElement;
+      var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      bar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', tick, { passive: true });
+    tick();
+  })();
+  </script>
 </body>
 </html>
